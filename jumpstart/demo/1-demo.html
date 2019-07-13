@@ -8,10 +8,12 @@
             <h2>This is a demo</h2>
         </hgroup>
         <p>Favourites:</p>
-        <form>
+        <form onsubmit="bmo.play();return false;">
             <input id="favUrl" type="url" required="required" placeholder="http://www.test.com" />
             <input type="submit" value="Save">
         </form>
+        <audio src="./audio/bmo_cry.mp3" id="bmo"></audio>
+        <video src="./video/video_test.mp4" id="vid" controls="controls"></video>
     </section>
 </body>
 </html>
