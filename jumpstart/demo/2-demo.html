@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+div + p { color: red;}
+#div2 { font-weight: bold;}
+li + li {color: pink}
+    </style>
+</head>
+<body>
+        <div id="div1">
+                <p>I will not go red because of the order in the selectors</p>
+                <div>I am not red
+                    <div>not red</div>
+                </div>
+                <p>paragraph - I am red</p>
+                <h1>heading</h1>
+                <p>I will NOT be red this time because I have an h1 in the way between me and my preceding div sibling</p>
+            </div>
+            <p id="p">I'll be red too</div>
+            <ul>
+                <li>I am first</li>
+                <li>I am second - I am pink</li>
+                <li>I am third - I am pink too</li>
+            </ul>
+</body>
+</html>
