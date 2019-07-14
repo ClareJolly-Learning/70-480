@@ -2,50 +2,45 @@
 <html>
 <head>
     <style>
-        #optionsMenu {
-            z-index: 2;
-            position: absolute;
-            top: 25px;
-            left: 550px;
-            width: 88px;
-            height: 178px;
-            background-color: red;
-            color: white;
-            cursor: pointer;
-        }
-        #optionsSVG {
-            position: relative;
-            left: -40px;
-        }
-        #optionsMenuText {
-            z-index: 3;
-            position: absolute;
-            top: 5px;
-            left: 7px;
-            font-size: 12px;
-            font-weight: bold;
-            color: #aadd44;
-            list-style-type: none;
-        }
-        #optionsSVG:hover {
-            box-shadow: 0px 0px 51px #aadd44;
-        }
-        rect:hover {
-            fill: white;
-            fill-opacity: 0.1;
-        }
+       .flexbox #flexbox3 {
+           margin-top: 20px;
+           display: flex;
+           flex-wrap: wrap;
+           width: 100%;
+           /* -ms-flex-pack:distribute;
+           -webkit-box-pack:justify;
+           justify-content: space-evenly;
+           border: 1px solid grey; */
+       }
+
+       .flexbox #flexbox3 > div {
+           min-width: 40px;
+           min-height: 40px;
+           background-color: grey;
+           margin: 5px;
+           font-size: 60px;
+           padding: 15px;
+           }
+
+       .flexbox #flexbox3 > div:nth-child(7) {
+           background-color: red;
+           }
+
     </style>
 </head>
 <body>
-        <menu id="optionsMenu">
-            <li id="optionsMenuText">Title</li>
-            <svg id="optionsSVG" width="88" height="178">
-                <rect id="opt1" x="7" y="27" width="29" height="29" fill="blue" stroke="black" />
-                <rect id="opt2" x="38" y="27" width="29" height="29" fill="yellow" stroke="black" />
-                <rect id="opt3" x="7" y="58" width="29" height="29" fill="orange" stroke="black" />
-                <rect id="opt4" x="38" y="58" width="29" height="29" fill="green" stroke="black" />
-                <rect id="opt5" x="7" y="89" width="61" height="58" fill="purple" stroke="black" />
-            </svg>
-        </menu>
+    <div class="flexbox">
+        <div class="flexbox" id="flexbox3">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+    </div>
 </body>
 </html>
