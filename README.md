@@ -1,6 +1,6 @@
-# 70-480
+# 70-480 - Programming in HTML with JavaScript and CSS3
 
-My personal notes on revising for the Microsoft 70-480 exam
+My personal notes on revising for the Microsoft 70-480 Programming in HTML with JavaScript and CSS3 exam
 
 ## JumpStart
 
