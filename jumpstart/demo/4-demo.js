@@ -1,10 +1,13 @@
-console.log(f1("one",2, 0.78,{},[]))
-// console.log(f2)
-
-function f1() {
-  debugger;
+function add(n1, n2) {
+  return n1 + n2
 }
 
-// var f2 = function () {
+function calc(n1, n2, processForCalc) {
+  return processForCalc(n1, n2);
+}
 
-// };
+function executeMath() {
+  console.log(calc(4,4,add));
+}
+
+executeMath()
