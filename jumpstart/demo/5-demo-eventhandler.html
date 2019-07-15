@@ -7,7 +7,7 @@
     grid-template-rows: 100px 20px 20px 1fr;
     grid-template-columns: 1fr 10px 1fr 10px 1fr;
     width: 450px;
-    height: 200px;
+    height: 400px;
 }
 
 .eventHandlers #container > * {
@@ -16,6 +16,8 @@
 
 .eventHandlers #container #theButton {
     /* -ms-grid-column-span: 5; */
+    grid-row: 1;
+    grid-column: 1 / span 5;
     background-color: #99CCFF;
     font-size: 24px;
 }
@@ -42,13 +44,11 @@
 .eventHandlers #container #log {
     grid-column: 1 /span 5;
     grid-row: 4;
-    /* -ms-grid-column-span: 5; */
     overflow-y: scroll;
 }
 .eventHandlers #container #clearLogBtn {
     grid-column: 1 /span 5;
     grid-row: 5;
-    /* -ms-grid-column-span: 5; */
 }
 </style>
 </head>
@@ -90,7 +90,7 @@ document.getElementById("removeEventListenerBtn").onclick = function (e) {
 };
 
 document.getElementById("addAnonEventListenerBtn").onclick = function (e) {
-    document.getElementById("theButton").addEventListener("click", function () { document.getElementById("log").innerText = "Hi";
+    document.getElementById("theButton").addEventListener("click", function () { document.getElementById("log").innerText =  document.getElementById("log").innerText +"\nHi";
     console.log("hi"); });
 };
 
@@ -98,8 +98,9 @@ document.getElementById("clearLogBtn").onclick = function(e) {
     document.getElementById("log").innerText = "";
 };
 function sayHi() { 
-    document.getElementById("log").innerText = "Hi";
-    console.log("hi"); }
+    document.getElementById("log").innerText = document.getElementById("log").innerText + "\nHi";
+    // console.log("hi"); 
+}
 </script>
 </body>
 </html>
