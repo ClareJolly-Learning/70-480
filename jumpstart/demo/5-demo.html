@@ -17,6 +17,9 @@
     </style>
 </head>
 <body>
+
+        <button id="btn">Click!</button>
+
     <h2>Demo</h2>
     <figure id="pic">
         <img src="images/fg.jpg" width="150px" alt="Fizzgig" class="picture"/>
@@ -31,6 +34,13 @@
         x.className = "item";
         //or
         x.classList.add("item");
+
+        function handler() { 
+            console.log('click')
+        }
+
+var b = document.querySelector("#btn");
+b.addEventListener("click",handler);
 
     </script>
 </body>

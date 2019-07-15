@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.eventHandlers #container {
+    display: grid;
+    grid-template-rows: 100px 20px 20px 1fr;
+    grid-template-columns: 1fr 10px 1fr 10px 1fr;
+    width: 450px;
+    height: 200px;
+}
+
+.eventHandlers #container > * {
+    margin: 5px;
+}
+
+.eventHandlers #container #theButton {
+    /* -ms-grid-column-span: 5; */
+    background-color: #99CCFF;
+    font-size: 24px;
+}
+.eventHandlers #container #setOnclickBtn {
+    grid-row: 2;
+    grid-column: 1;
+}
+.eventHandlers #container #removeOnclickBtn {
+    grid-row: 3;
+    grid-column: 1;
+}
+.eventHandlers #container #addEventListenerBtn {
+    grid-column: 3;
+    grid-row: 2;
+}
+.eventHandlers #container #removeEventListenerBtn {
+    grid-column: 3;
+    grid-row: 3;
+}
+.eventHandlers #container #addAnonEventListenerBtn {
+    grid-column: 5;
+    grid-row: 2;
+}
+.eventHandlers #container #log {
+    grid-column: 1 /span 5;
+    grid-row: 4;
+    /* -ms-grid-column-span: 5; */
+    overflow-y: scroll;
+}
+.eventHandlers #container #clearLogBtn {
+    grid-column: 1 /span 5;
+    grid-row: 5;
+    /* -ms-grid-column-span: 5; */
+}
+</style>
+</head>
+<body>
+<div class="eventHandlers fragment">
+    <header aria-label="Header content" role="banner">
+        <h1 class="titlearea win-type-ellipsis">
+            <span class="pagetitle">Event Handlers</span>
+        </h1>
+    </header>
+    <section aria-label="Main content" role="main">
+        <div id="container">
+            <button id="theButton">The Button</button>
+            <button id="setOnclickBtn">Set onclick event</button>
+            <button id="removeOnclickBtn">-  onclick event</button>
+            <button id="addEventListenerBtn"> + click listener</button>
+            <button id="removeEventListenerBtn">-  click listener</button>
+            <button id="addAnonEventListenerBtn"> + anon click listener</button>
+            <div id="log"></div>
+            <button id="clearLogBtn">Clear Log</button>
+        </div>
+    </section>
+</div>
+<script>
+document.getElementById("setOnclickBtn").onclick = function (e) {
+    document.getElementById("theButton").onclick = sayHi;
+};
+
+document.getElementById("removeOnclickBtn").onclick = function (e) {
+    document.getElementById("theButton").onclick = null;
+};
+
+document.getElementById("addEventListenerBtn").onclick = function (e) {
+    document.getElementById("theButton").addEventListener("click", sayHi);
+};
+
+document.getElementById("removeEventListenerBtn").onclick = function (e) {
+    document.getElementById("theButton").removeEventListener("click", sayHi);
+};
+
+document.getElementById("addAnonEventListenerBtn").onclick = function (e) {
+    document.getElementById("theButton").addEventListener("click", function () { document.getElementById("log").innerText = "Hi";
+    console.log("hi"); });
+};
+
+document.getElementById("clearLogBtn").onclick = function(e) {
+    document.getElementById("log").innerText = "";
+};
+function sayHi() { 
+    document.getElementById("log").innerText = "Hi";
+    console.log("hi"); }
+</script>
+</body>
+</html>
