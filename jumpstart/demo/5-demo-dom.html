@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.item {
+    color: red;
+}
+</style>
+</head>
+<body>
+<div class="dom fragment">
+    <header aria-label="Header content" role="banner">
+    <h1 class="titlearea win-type-ellipsis">
+        <span id="domTitle" class="pagetitle">DOM</span>
+    </h1>
+    </header>
+    <section id="domContainer" aria-label="Main content" role="main">
+    <p id="domButton">Click any content...</p>
+    </section>
+</div>
+<script>
+    var container;
+
+    function addItem(item) {
+    item.addEventListener("click", function() {
+        item.className = "item";
+        item.innerText = "item [li clicked]";
+        var newItem = document.createElement("li");
+        newItem.innerText = "item";
+        item.parentElement.appendChild(newItem);
+        addItem(newItem);
+    });
+    }
+
+    var pbutton = document.getElementById("domButton");
+    var title = document.getElementById("domTitle");
+
+    container = domContainer;
+
+    title.addEventListener("click", function() {
+        title.innerText = "DOM [span innerText]";
+        title.classList.add("item");
+    });
+
+    pbutton.addEventListener("click", function() {
+        var txt = pbutton.innerText;
+        container.removeChild(pbutton);
+        var btn = document.createElement("button");
+        btn.textContent = txt;
+        container.appendChild(btn);
+        var newDiv = document.createElement("div");
+        newDiv.innerHTML = "<ul><li>item</li></ul>";
+        container.appendChild(newDiv);
+        var domItem = newDiv.querySelector("li");
+        addItem(domItem);
+    });
+</script>
+</body>
+</html>

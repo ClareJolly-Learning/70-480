@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- <style>
+    <style>
+        .item {
+            color: red;
+        }
         /* #pic {
             width: 150px;
             height: 150px;
@@ -11,7 +14,7 @@
         /* #pic:hover {
             transform: scale(0.5) translate(50px, 50px) rotate(10deg) ;
         } */
-    </style> -->
+    </style>
 </head>
 <body>
     <h2>Demo</h2>
@@ -20,16 +23,14 @@
         <figcaption>Fizzgig</figcaption>
     </figure>
     <h2>Footer</h2>
+    <span id="anyID">I've not changed yet</span>
     <script>
-        // function queryDom() {
-            var x = document.getElementById("pic")
-            console.log(x) // <figure id="pic"> etc </figure>
-    x = document.querySelector(".picture")
-    console.log(x) // 
-    x = document.querySelectorAll(".picture")
-    console.log(x) // 
-        // }
-        // queryDom()
+        var x = document.querySelector("#anyID");
+        x.innerText = "changed";
+
+        x.className = "item";
+        //or
+        x.classList.add("item");
 
     </script>
 </body>
