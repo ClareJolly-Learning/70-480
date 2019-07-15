@@ -1,12 +1,13 @@
-var fruit = ['orange', 'pear', 'pineapple', 'apple', 'cherry'];
+var dogA = {};
+dogA.breed = 'pug';
+dogA.bark = function() { console.log('woof');}
 
-fruit.forEach(function(item){
-  console.log(item)
-})
-  console.log(fruit.some(function(item, index) {
-    return item[0] === 'a';
-  })) // true
+console.log(dogA)
 
-  console.log(fruit.some(function(item, index) {
-    return item.length < 1;
-  })) // false
+//object initialiser format
+var dog = {
+  breed: 'pug',
+  bark: function() { console.log('woof');}
+}
+
+console.log(dog)
