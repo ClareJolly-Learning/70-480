@@ -10,3 +10,4 @@ My personal notes on revising for the Microsoft 70-480 Programming in HTML with 
 - [Module 2: CSS Selectors and Style Properties](./jumpstart/2.md#readme)
 - [Module 3: Advanced layout and Animations](./jumpstart/3.md#readme)
 - [Module 4: JavaScript Core Capabilities](./jumpstart/4.md#readme)
+- [Module 5: DOM Interactions](./jumpstart/4.md#readme)
