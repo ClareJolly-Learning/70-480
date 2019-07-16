@@ -8,6 +8,21 @@
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
     - [SVG shapes](#SVG-shapes)
       - [Path Commands](#Path-Commands)
+    - [Example](#Example)
+    - [Transformations](#Transformations)
+    - [Transitions](#Transitions)
+    - [Canvas](#Canvas)
+  - [CSS Selectors](#CSS-Selectors)
+    - [Questions](#Questions)
+  - [HTML5 Objects](#HTML5-Objects)
+    - [Audio/Video](#AudioVideo)
+  - [Application cache](#Application-cache)
+    - [Updating Application cache](#Updating-Application-cache)
+  - [Geolocation](#Geolocation)
+  - [More questions](#More-questions)
+  - [JavaScript](#JavaScript)
+    - [Web worker](#Web-worker)
+    - [Creating objects](#Creating-objects)
   - [Remote Communication](#Remote-Communication)
 
 ## Exam Tips
@@ -51,9 +66,9 @@ Command   | Name
 
  Uppercase is absolute and lowercase is relative
 
- #### Example
+#### Example
 
- ```js
+```js
  <svg height="140" width="500">
   <ellipse cx="200" cy="80" rx="100" ry="50"
   style="fill:yellow; stroke:purple; stroke-width:2;" />
