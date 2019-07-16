@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.webworker section[role=main] > * {
+    margin: 20px 0px;
+
+}
+</style>
+</head>
+<body>
+<div class="html5sockets fragment">
+    <section class="page-section" aria-label="Main content" role="main">
+        <div class="explanation">This demo was swiped from http://www.websocket.org/echo.html</div>
+        <div id="output"></div>
+    </section>
+</div>
+<script>
+var websocket = new WebSocket("ws://echo.websocket.org/");
+
+websocket.onopen = function (evt) {
+    writeToScreen("CONNECTED");
+    var message = "Web socket test";
+    writeToScreen("SENT: " + message);
+    websocket.send(message);
+};
+
+websocket.onclose = function (evt) {
+    writeToScreen("DISCONNECTED");
+};
+
+websocket.onmessage = function (evt) {
+    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
+    websocket.close();
+};
+websocket.onerror = function (evt) { writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data); };
+
+function writeToScreen(message) {
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
+}
+
+function unload () {
+websocket.close();
+}
+
+</script>
+</body>
+</html>
