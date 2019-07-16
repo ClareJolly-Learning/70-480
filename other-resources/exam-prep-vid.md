@@ -222,7 +222,7 @@ div p {
 
 ```css
 ul + div {
-  /* div that comes after a ul */
+  /* div that comes right after a ul */
   background-color: orange;
 }
 ```
