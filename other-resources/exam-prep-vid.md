@@ -8,6 +8,7 @@
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
     - [SVG shapes](#SVG-shapes)
       - [Path Commands](#Path-Commands)
+  - [Remote Communication](#Remote-Communication)
 
 ## Exam Tips
 
@@ -372,12 +373,6 @@ Answer - a + d
 
 ---
 
-### Remote Communication
-
-
-
----
-
 ### JavaScript
 
 #### Web worker
@@ -467,6 +462,8 @@ if message received "START" then proceeds and sends message saying started.  Oth
 
 #### Creating objects
 
+object oriented.  Sort of class
+
 ```js
 "use strict"
 var Student = function (name) {
@@ -482,3 +479,11 @@ var Student = function (name) {
 var student = new Student("Christopher");
 alert(student.get_name());
 ```
+
+---
+
+### Remote Communication
+
+
+
+---
