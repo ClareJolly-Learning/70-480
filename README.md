@@ -12,3 +12,7 @@ My personal notes on revising for the Microsoft 70-480 Programming in HTML with 
 - [Module 4: JavaScript Core Capabilities](./jumpstart/4.md#readme)
 - [Module 5: DOM Interactions](./jumpstart/5.md#readme)
 - [Module 6: JavaScript Advanced Topics](./jumpstart/6.md#readme)
+
+## Other Resources
+
+- [Microsoft Ignite 2015 Exam Prep Session for Exam 70 480 Programming in HTML5 with JavaScript and CSS](./other-resources/exam-prep-vid.md#readme)
