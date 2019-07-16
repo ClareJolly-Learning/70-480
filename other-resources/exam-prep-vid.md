@@ -249,7 +249,7 @@ div#three {
 
 ```css
 #three {
-  /* div with id of three */
+  /* anything with id of three */
   background-color: seagreen;
 }
 ```
