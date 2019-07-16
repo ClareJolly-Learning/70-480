@@ -277,6 +277,10 @@ Answer - c: `nav a`
 
 Answer - a + b
 
+![question](../images/q3.png)
+
+Answer - b: `input:required { background-color: yellow;`
+
 ---
 
 ### HTML5 Objects
