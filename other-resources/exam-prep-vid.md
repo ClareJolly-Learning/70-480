@@ -7,6 +7,7 @@
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
     - [SVG shapes](#SVG-shapes)
       - [Path Commands](#Path-Commands)
+    - [Questions](#Questions)
   - [HTML5 Objects](#HTML5-Objects)
   - [Remote Communication](#Remote-Communication)
   - [JavaScript](#JavaScript)
@@ -179,6 +180,102 @@ context.fill();
 ```
 
 ![canvas](../images/canvas2.png)
+
+---
+
+### CSS Selectors
+
+- `>` - Direct descendent
+- `+` - Adjacent (after)
+- `:after` - Add content after item
+- `:required` - Filter to required input items
+- and many more
+
+```html
+<div>
+  <p id="three">First Paragraph</p>
+  <div class="hello" lang="en">Hi</div>
+    <ul>
+      <p id="two">Second Paragraph</p>
+    </ul>
+    <div id="three">Test</div>
+</div>
+```
+
+```css
+div > p {
+  /* p that's a child of a div - direct descendent */
+  background-color: yellow;
+}
+```
+
+![c1](../images/c1.png)
+
+```css
+div p {
+  /* p that's a child of a div - not just direct descendent */
+  background-color: yellow;
+}
+```
+
+![c1](../images/c2.png)
+
+```css
+ul + div {
+  /* div that comes after a ul */
+  background-color: orange;
+}
+```
+
+![c1](../images/c3.png)
+
+```css
+div.hello {
+  /* div with class of hello */
+  background-color: lime;
+}
+```
+
+![c1](../images/c4.png)
+
+```css
+div#three {
+  /* div with id of three */
+  background-color: seagreen;
+}
+```
+
+![c1](../images/c5.png)
+
+```css
+#three {
+  /* div with id of three */
+  background-color: seagreen;
+}
+```
+
+![c1](../images/c6.png)
+
+```css
+div[lang=en]{
+  /* div with attribute of lang-en */
+  background-color: red;
+} 
+```
+
+![c1](../images/c7.png)
+
+---
+
+#### Questions
+
+![question](../images/q1.png)
+
+Answer - c: `nav a`
+
+![question](../images/q2.png)
+
+Answer - a + b
 
 ---
 
