@@ -7,6 +7,7 @@
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
     - [SVG shapes](#SVG-shapes)
       - [Path Commands](#Path-Commands)
+    - [Transformations](#Transformations)
   - [HTML5 Objects](#HTML5-Objects)
   - [Remote Communication](#Remote-Communication)
   - [JavaScript](#JavaScript)
@@ -75,6 +76,10 @@ Command   | Name
   stroke-width="3" fill="none" />
   <path id="lineBC" d="M 250 50 l 150 300" stroke="red" stroke-width="3" fill="none" />
 </svg>
+
+<svg height="210" width="400">
+    <path d="M150 0 L75 200 L225 200 Z" stroke="green" stroke-width="5" />
+</svg>
 ```
 
 ![svg](../images/svg1.png)
@@ -118,6 +123,15 @@ Command   | Name
   e.g. 
   - `M 100,100` means "Pick up the pen and move it to the exact coordinates 100,100"
   - `m 100,100` means "Move the Pen 100 down and 100 right from wherever you currently are."
+
+---
+
+#### Transformations
+
+- Translate
+- Rotate
+- Scale
+- Skew
 
 ---
 
