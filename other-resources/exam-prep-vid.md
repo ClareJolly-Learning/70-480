@@ -1,16 +1,13 @@
 # Microsoft Ignite 2015 Exam Prep Session for Exam 70 480 Programming in HTML5 with JavaScript and CSS <!-- omit in toc -->
 
 [Link to video](https://www.youtube.com/watch?v=1M2LdJDBLwg)
+[github](https://github.com/SidneyAndrewsOpsgility/HTML5Demos)
 
 - [Exam Tips](#Exam-Tips)
 - [Exam Topics](#Exam-Topics)
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
     - [SVG shapes](#SVG-shapes)
       - [Path Commands](#Path-Commands)
-  - [Geolocation](#Geolocation)
-  - [More questions](#More-questions)
-  - [Remote Communication](#Remote-Communication)
-  - [JavaScript](#JavaScript)
 
 ## Exam Tips
 
@@ -383,6 +380,105 @@ Answer - a + d
 
 ### JavaScript
 
+#### Web worker
 
+When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
+
+A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background.
+
+Allow you to run asynchronous processes in the background.  Offload things to another thread
+
+Have a script file - what the worker does asynchronously.
+
+Create a callback that handles the message
+
+```js
+var worker = new Worker("/scripts/worker.js"); 
+  
+worker.onmessage = function (event) {
+  
+  console.log(event.data);
+  
+  var newItem = $('<li>', {
+    html: event.data,
+    'class': 'list-group-item'
+  });
+  
+  $("#messageList").append(newItem);
+  
+};
+
+// postMessage sends signals to the web worker
+// Web worker starts automatically, so if you want to delay execution
+// you need to provide that mechanism
+worker.postMessage("START");
+  
+$("#send").click(function () {
+  
+    worker.postMessage($("#message").val());
+  });
+  
+// var worker = new Worker("/Scripts/Worker.js");
+
+// worker.onmessage = function (event) {
+//   $("#messageList").append("<li>" + event.data + "</li>");
+// };
+
+
+// worker.postMessage("START");
+
+// $("#send").click(function () {
+//   worker.postMessage($("#message").val());
+// });
+```
+
+In this example, any time the worker responds we append an `<li>` to the `#messageList`
+
+The worker.js
+
+```js
+var started = false
+self.onmessage = function (event) {
+  if (event.data == "START") {
+    startWork();
+  } else {
+    sendMessage(event.data);
+  }
+}
+
+// postMessage sends signals to the caller
+function startWork() {
+  started = true
+  self.postMessage("Worker started.");
+}
+
+function sendMessage(message) {
+  if (started) {
+    self.postMessage('[Processed]: ' + message);
+  }
+}
+```
+
+Has a callback when it receives a message
+
+if message received "START" then proceeds and sends message saying started.  Otherwise will echo the received message back
 
 ---
+
+#### Creating objects
+
+```js
+"use strict"
+var Student = function (name) {
+  var name = name
+  var getName = function () {
+    return name;
+  };
+  return {
+    get_name: getName
+  }
+}
+
+var student = new Student("Christopher");
+alert(student.get_name());
+```
