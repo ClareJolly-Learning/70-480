@@ -82,11 +82,11 @@ Command   | Name
 - Ellipse
 
   `<ellipse cx="200" cy="80" rx="100" ry="50"`
-  //TODO:
-  - `cx` = 
-  - `cy` = 
-  - `rx` = 
-  - `ry` = 
+
+  - `cx` =  attribute defines the x coordinate of the center of the ellipse
+  - `cy` =  attribute defines the y coordinate of the center of the ellipse
+  - `rx` =  attribute defines the horizontal radius
+  - `ry` =  attribute defines the vertical radius
 
   CSS styling
 
