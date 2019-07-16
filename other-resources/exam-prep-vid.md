@@ -7,8 +7,8 @@
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
     - [SVG shapes](#SVG-shapes)
       - [Path Commands](#Path-Commands)
-    - [Questions](#Questions)
-  - [HTML5 Objects](#HTML5-Objects)
+  - [Geolocation](#Geolocation)
+  - [More questions](#More-questions)
   - [Remote Communication](#Remote-Communication)
   - [JavaScript](#JavaScript)
 
@@ -285,7 +285,93 @@ Answer - b: `input:required { background-color: yellow;`
 
 ### HTML5 Objects
 
+#### Audio/Video
 
+Video
+
+```html
+<video width="320" height="240" poster="logo.jpg"
+controls autobuffer autoplay loop mute>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+```
+
+Audio
+
+```html
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+```
+
+---
+
+### Application cache
+
+Caching certain files and what files to fallback to
+
+```
+CACHE MANIFEST
+#VERSION 1.0
+
+CACHE:
+/index.html/styles/site.css
+/images/logo.jpg
+
+NETWORK:
+/members
+
+FALLBACK:
+/details/ /offline.html
+```
+
+---
+
+#### Updating Application cache
+
+Swap cache and download new files
+
+```js
+//download new application cache
+applicationCache.Update();
+
+// wait for the data to be downloaded, then swap cache
+if (aplicationCache.status == 4) {
+  applicationCache.swapCache();
+}
+```
+
+---
+
+### Geolocation
+
+Being able to use the client/browser geolocation
+
+Methods, options and return data
+
+![geo](../images/geo.png)
+
+---
+
+### More questions
+
+![q](../images/q4.png)
+
+Answer - b: sessionStorage
+
+localStorage persists across tabs
+
+sessionStorage only in same tab
+
+Think of browser as a browser session
+
+![q](../images/q5.png)
+
+Answer - a + d
 
 ---
 
