@@ -7,7 +7,6 @@
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
     - [SVG shapes](#SVG-shapes)
       - [Path Commands](#Path-Commands)
-    - [Transformations](#Transformations)
   - [HTML5 Objects](#HTML5-Objects)
   - [Remote Communication](#Remote-Communication)
   - [JavaScript](#JavaScript)
@@ -128,10 +127,58 @@ Command   | Name
 
 #### Transformations
 
-- Translate
+- Translate - move
 - Rotate
 - Scale
 - Skew
+
+Apply an effect to an element
+
+---
+
+#### Transitions
+
+- `transition-property`
+- `transition-duration`
+- `transition-timing-function`
+- `linear (default)`
+  - `ease`
+  - `ease-in`
+  - `ease-out`
+  - `ease-in-out`
+  - `cubic-bezier`
+
+---
+
+#### Canvas
+
+```html
+<canvas id="canvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+```
+
+![canvas](../images/canvas1.png)
+
+```js
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+context.clearRect(0, 0, canvas.width, canvas.height)
+
+context.strokeStyle = "rgb(0, 0, 255)";
+context.fillStyle = "rgb(255, 0, 0, 0.75)";
+
+// create a path
+context.beginPath();
+context.moveTo(20, 20);
+context.lineTo(80, 70);
+context.stroke();
+context.lineTo(40, 110);
+context.stroke();
+context.closePath();
+context.stroke();
+context.fill();
+```
+
+![canvas](../images/canvas2.png)
 
 ---
 
