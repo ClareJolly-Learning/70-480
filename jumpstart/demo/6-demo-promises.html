@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.eventHandlers #container {
+    display: grid;
+    grid-template-rows: 100px 20px 20px 1fr;
+    grid-template-columns: 1fr 10px 1fr 10px 1fr;
+    width: 450px;
+}    
+.promises progress {
+    width: 400px;
+    height: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.promises section[role=main] button {
+    margin-right: 10px;
+}
+
+.promises h3 { margin-top: 20px; }
+</style>
+</head>
+<body>
+    <div class="promises fragment">
+        <section aria-label="Main content" role="main">
+            <div class="method1">
+                <h3>Long Sync Task</h3>
+                <div class="explanation">This task blocks the UI. Notice the button state freezes. This is not an acceptable user experience.</div>
+                <progress value="0" max="100"></progress>
+                <button class="start">Start</button><button class="reset">Reset</button>
+            </div>
+
+            <div class="method2">
+                <h3>Long Async Task (no Promise)</h3>
+                <div class="explanation">This task does not block the UI, but our progress bar reports immediately that it's complete even though it's not.</div>
+                <progress value="0" max="100"></progress>
+                <button class="start">Start</button><button class="reset">Reset</button>
+            </div>
+
+            <div class="method3">
+                <h3>Long Async Task (using a Promise)</h3>
+                <div class="explanation">Now with promises we can not only wait until the task is done to update our progress, but we can update it along the way as progress is reported.</div>
+                <progress value="0" max="100"></progress>
+                <button class="start">Start</button><button class="reset">Reset</button>
+            </div>
+        </section>
+    </div>
+<script>
+var SECONDS_DELAY = 3;
+
+//call the longTaskSync method which will block the UI while it's working
+var method1 = document.querySelector(".promises .method1");
+method1.querySelector("button.start").onclick = function (e) {
+    longTaskSync();
+    method1.querySelector("progress").value = 100;
+};
+method1.querySelector("button.reset").onclick = function (e) {
+    method1.querySelector("progress").value = 0;
+};
+
+var method2 = document.querySelector(".promises .method2");
+method2.querySelector("button.start").onclick = function (e) {
+    longTaskAsync();
+    method2.querySelector("progress").value = 100;
+};
+method2.querySelector("button.reset").onclick = function (e) {
+    method2.querySelector("progress").value = 0;
+};
+
+var method3 = document.querySelector(".promises .method3");
+method3.querySelector("button.start").onclick = function (e) {
+    method3.querySelector("progress").value = "0";
+    longTaskAsyncPromise(null, null, prog)
+    // longTaskAsyncPromise(null, null, function (s) { method3.querySelector("progress").value = (100 / SECONDS_DELAY) * s; })
+    // .done(null, null, function (s) { method3.querySelector("progress").value = (100 / SECONDS_DELAY) * s; });
+};
+method3.querySelector("button.reset").onclick = function (e) {
+    method3.querySelector("progress").value = 0;
+};
+
+function prog(s) {
+    method3.querySelector("progress").value = (100 / SECONDS_DELAY) * s;
+}
+
+function longTaskSync() {
+    var start = new Date().getTime();
+    var delay = SECONDS_DELAY * 1000;
+    while (new Date().getTime() < start + delay);
+}
+
+function longTaskAsync() {
+    var seconds = 0;
+    var intervalId = window.setInterval(function () {
+        seconds++;
+        if (seconds >= SECONDS_DELAY) {
+            window.clearInterval(intervalId);
+        }
+    }, 1000);
+}
+
+function longTaskAsyncPromise(c,e,p) {
+    return new Promise(function (c, e, p) {
+        var seconds = 0;
+        var intervalId = window.setInterval(function () {
+            seconds++;
+            prog(seconds);
+            if (seconds >= SECONDS_DELAY) {
+                window.clearInterval(intervalId);
+                c();
+            }
+        }, 1000);
+    });
+}
+
+// function done (i) {
+//     isDone[i] = true;
+//     if (isDone.every(function (x) { return x; })) {
+//         observer.onCompleted();
+//     }
+// }
+
+// function onCompleted () {
+//     var observer;
+//     checkDisposed.call(this);
+//     if (!this.isStopped) {
+//         this.isStopped = true;
+//         var now = this.scheduler.now();
+//         this._trim(now);
+//         var o = this.observers.slice(0);
+//         for (var i = 0, len = o.length; i < len; i++) {
+//             observer = o[i];
+//             observer.onCompleted();
+//             observer.ensureActive();
+//         }
+//         this.observers = [];
+//     }
+// }
+</script>
+</body>
+</html>

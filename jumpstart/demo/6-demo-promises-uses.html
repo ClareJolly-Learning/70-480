@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.promiseuses progress {
+    width: 400px;
+    height: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.promiseuses > div {
+    columns: 2;
+}
+
+.promiseuses section[role=main] button {
+    margin-right: 10px;
+}
+
+.promiseuses div:not(:first-child) > h3 {margin-top: 20px; }
+
+</style>
+</head>
+<body>
+<div class="promiseuses fragment">
+    <section aria-label="Main content" role="main">
+        <div>
+            <div class="method1">
+                <h3>Consuming a promise</h3>
+                <div class="explanation">Implement the common scenario of consuming a promise and defining a function to be called when the promise is complete.</div>
+                <progress value="0" max="100"></progress>
+                <button class="start">Start</button><button class="reset">Reset</button>
+            </div>
+
+            <div class="method2">
+                <h3>Passing on a promise</h3>
+                <div class="explanation">Create a function that is async because it itself calls an async function and merely passes its promise to the caller.</div>
+                <progress value="0" max="100"></progress>
+                <button class="start">Start</button><button class="reset">Reset</button>
+            </div>
+
+            <div class="method3">
+                <h3>Creating a promise</h3>
+                <div class="explanation">Create and return a new promise from a function and get complete control over it.</div>
+                <progress value="0" max="100"></progress>
+                <button class="start">Start</button><button class="reset">Reset</button>
+            </div>
+
+            <div class="method4">
+                <h3>Storing a promise</h3>
+                <div class="explanation">Store a promise returned by an async function and later access that stored promise.</div>
+                <progress value="0" max="100"></progress>
+                <button class="start">Start</button><button class="reset">Reset</button>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+var SECONDS_DELAY = 3;
+
+//consuming a promise
+var method1 = document.querySelector(".method1");
+method1.querySelector("button.start").onclick = function (e) {
+    longTaskAsyncPromise(method1).then(function () {
+        method1.querySelector("progress").value = 100;
+        console.log('promise complete')
+        method1.querySelector("button.start").innerHTML = 'DONE'
+    });
+};
+method1.querySelector("button.reset").onclick = function (e) {
+    method1.querySelector("progress").value = 0;
+};
+
+//passing on a promise
+var method2 = document.querySelector(".method2");
+method2.querySelector("button.start").onclick = function (e) {
+    function myAsyncFunction() {
+        return longTaskAsyncPromise(method2);
+    }
+
+    myAsyncFunction().then(function () {
+        method2.querySelector("progress").value = 100;
+        console.log('promise complete')
+        method2.querySelector("button.start").innerHTML = 'DONE'
+    });
+};
+method2.querySelector("button.reset").onclick = function (e) {
+    method2.querySelector("progress").value = 0;
+};
+
+//creating a promise
+var method3 = document.querySelector(".method3");
+method3.querySelector("button.start").onclick = function (e) {
+    function myAsyncFunction() {
+        return new Promise(function (c, e, p) {
+            //do something that might take longer than 50ms
+            try {
+                longTaskAsyncPromise(method3).then(function () {
+                    console.log('initial promise complete')
+                    c();
+                });
+            }
+            catch (err) {
+                e(err);
+            }
+        });
+    }
+
+    myAsyncFunction().then(function () {
+        method3.querySelector("progress").value = 100;
+        console.log('main promise complete')
+        method3.querySelector("button.start").innerHTML = 'DONE'
+                    
+    });
+};
+method3.querySelector("button.reset").onclick = function (e) {
+    method3.querySelector("progress").value = 0;
+};
+
+//storing a promise
+var method4 = document.querySelector(".method4");
+method4.querySelector("button.start").onclick = function (e) {
+
+    var storedPromise = longTaskAsyncPromise(method4);
+
+    storedPromise.then(function () {
+        method4.querySelector("progress").value = 100;
+        console.log('promise complete')
+        method4.querySelector("button.start").innerHTML = 'DONE'
+                    
+    });
+};
+method4.querySelector("button.reset").onclick = function (e) {
+    method4.querySelector("progress").value = 0;
+};
+
+function prog(s, method) {
+    method.querySelector("progress").value = (100 / SECONDS_DELAY) * s;
+}
+
+function complete() {
+    console.log('done')
+}
+
+function longTaskAsyncPromise(method) {
+    return new Promise(function (c, e, p) {
+        var seconds = 0;
+        var intervalId = window.setInterval(function () {
+            seconds++;
+            prog(seconds, method);
+            if (seconds >= SECONDS_DELAY) {
+                window.clearInterval(intervalId);
+                complete();
+                c()
+            }
+        }, 1000);
+    });
+}
+</script>
+</body>
+</html>
