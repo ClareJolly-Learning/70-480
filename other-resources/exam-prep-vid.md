@@ -1,4 +1,4 @@
-# Microsoft Ignite 2015 Exam Prep Session for Exam 70 480 Programming in HTML5 with JavaScript and CSS <!-- omit in toc -->
+# Microsoft Exam Prep Session - Exam 70 480 Programming in HTML5 with JavaScript and CSS <!-- omit in toc -->
 
 [Link to video](https://www.youtube.com/watch?v=1M2LdJDBLwg)
 [github](https://github.com/SidneyAndrewsOpsgility/HTML5Demos)
@@ -22,19 +22,19 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
     - [Updating Application cache](#Updating-Application-cache)
     - [Geolocation](#Geolocation)
   - [More questions](#More-questions)
+  - [Remote Communication](#Remote-Communication)
+    - [XML HTTP Request](#XML-HTTP-Request)
+    - [AJAX](#AJAX)
+    - [Reading JSON](#Reading-JSON)
+    - [Alternative Get request](#Alternative-Get-request)
+    - [Web Sockets](#Web-Sockets)
   - [JavaScript](#JavaScript)
     - [Web worker](#Web-worker)
     - [Creating objects](#Creating-objects)
-  - [Remote Communication](#Remote-Communication)
-    - [XML HTTP](#XML-HTTP)
-    - [Reading JSON](#Reading-JSON)
     - [JQuery](#JQuery)
-    - [AJAX call](#AJAX-call)
       - [Demo 1 - jQuery selectors](#Demo-1---jQuery-selectors)
       - [Demo 2 - jQuery Interactive](#Demo-2---jQuery-Interactive)
       - [Demo 3 - jQuery HTTP Get](#Demo-3---jQuery-HTTP-Get)
-    - [AJAX](#AJAX)
-    - [Web Sockets](#Web-Sockets)
   - [Even more questions](#Even-more-questions)
 
 ## Exam Tips
@@ -446,9 +446,150 @@ Answer - a + d
 
 ---
 
+### Remote Communication
+
+#### XML HTTP Request
+
+Low level
+
+Open up connection, 
+
+```js
+// create new object
+var request = new XMLHttpRequest();
+// call open to set up
+request.open("GET", "/products/list", true);
+// enent handler for when request changes
+request.onreadystatechange = function () {
+  if (request.readyState === 4) {
+    var response = JSON.parse(request.responseText);
+    var productList = response.productList;
+    displayList();
+  }
+};
+// send the data
+request.send();
+```
+
+<!-- `request.open` -->
+
+`request.open("GET", "/products/list", true);`
+
+- open connection
+- indicate the verb (get, put, post, delete)
+- add the endpoint
+- true/false whether to use async
+
+Followed by callback on `request.onreadystatechange`
+
+When state changes, check the readyState (mainly 4 indicating completion) then grab the responseText and JSON parse (to get JSON) and add into productList.
+
+Another example:
+
+```js
+$('load-data').click(function () {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var response = xhr.responseText;
+      $('#output').text(response);
+    }
+  }
+
+  // get everything set up
+  xhr.open('GET', '/Demo.txt');
+  // send the request - if you leave this off, won't actually call
+  xhr.send();
+})
+```
+
+**Dont forget, MUST SPECIFY `SEND`**
+
+---
+
+#### AJAX
+
+```js
+var productJSON = JSON.stringify({ newProduct: product });
+$.ajax({
+  url: "/Services/ProductService.svc/Add",
+  type: "POST",
+  dataType: "json",
+  contentType: "application/json; charset=utf-8",
+  data: productJSON,
+  success: displayLocations,
+  failure: displayError
+})
+```
+
+in jQuery, the post, get, put and delete is essentially doing an AJAX call.  You can get more detailed into the parameters using this syntax however.
+
+---
+
+#### Reading JSON
+
+Once you get results back
+
+```js
+function displayLocations(result) {
+  for (var i = 0; i < result.d.length; i++) {
+    var product = result.d(i);
+    var item = "<li>" + product.Name + "</li>"
+    $("#products-list").append(item);
+  }
+}
+```
+
+---
+
+#### Alternative Get request
+
+```js
+$('#load-data').click(function () {
+  // make the call, and get the JSON data (raw text in this case) 
+  $.get('/Demo.txt').done(function (data) {
+    $('#output').test(data);
+  });
+
+  // $getJON // JSON data
+});
+```
+
+---
+
+#### Web Sockets
+
+Asynchronous way to send communication back and forth in a connected channel.  Communicate from web application to server and vice versa.  Doesn't need a http request.  Useful for chat
+
+```js
+if (window.WebSocket){
+  var socket = new WebSocket('wss://url.com/endpoint');
+  socket.onopen = function () {
+    socket.send('hello, world');
+  }
+  socket.onmessage = function (event) {
+    if (event.type == 'Text') {
+      $('#output').text(event.data);
+    }
+  }
+}
+```
+
+- create new websocket
+- specify endpoint
+- when open give it a callback to send to server
+- when receive message another callback
+
+`wss` - web sockets secure
+
+---
+
 ### JavaScript
 
 #### Web worker
+
+Simulate threading
 
 When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
 
@@ -461,7 +602,8 @@ Have a script file - what the worker does asynchronously.
 Create a callback that handles the message
 
 ```js
-var worker = new Worker("/scripts/worker.js"); 
+//specify script file - ends up on a different thread
+var worker = new Worker("/scripts/worker.js");
   
 worker.onmessage = function (event) {
   
@@ -555,43 +697,6 @@ alert(student.get_name());
 
 ---
 
-### Remote Communication
-
-#### XML HTTP
-
-```js
-var request = new XMLHttpRequest();
-request.open("GET", "/products/list", true);
-request.onreadystatechange = function () {
-  if (request.readyState === 4) {
-    var response = JSON.parse(request.responseText);
-    var productList = response.productList;
-    displayList();
-  }
-};
-request.send();
-```
-
-`request.open`
-
-Followed by callback on `request.onreadystatechange`
-
----
-
-#### Reading JSON
-
-Once you get results back
-
-```js
-function displayLocations(result) {
-  for (var i = 0; i < result.d.length; i++) {
-    var product = result.d(i);
-    var item = "<li>" + product.Name + "</li>"
-    $("#products-list").append(item);
-  }
-}
-```
-
 #### JQuery
 
 ![jquery](../images/jquery.png)
@@ -599,8 +704,6 @@ function displayLocations(result) {
 Selectors in JQuery correlate to CSS3 selectors
 
 ---
-
-#### AJAX call
 
 ##### Demo 1 - jQuery selectors
 
@@ -866,50 +969,6 @@ app.post('/api/data', function(req, res) {
 ```
 
 </details>
-
----
-
-#### AJAX
-
-```js
-var productJSON = JSON.stringify({ newProduct: product });
-$.ajax({
-  url: "/Services/ProductService.svc/Add",
-  type: "POST",
-  dataType: "json",
-  contentType: "application/json; charset=utf-8",
-  data: productJSON,
-  success: displayLocations,
-  failure: displayError
-})
-```
-
-in jQuery, the post, get, put and delete is essentially doing an AJAX call.  You can get more detailed into the parameters using this syntax however.
-
----
-
-#### Web Sockets
-
-Asynchronous way to send communication back and forth in a connected channel.  Communicate from web application to server and vice versa.  Doesn't need a http request.  Useful for chat
-
-```js
-if (window.WebSocket){
-  var socket = new WebSocket('wss://url.com/endpoint');
-  socket.onopen = function () {
-    socket.send('hello, world');
-  }
-  socket.onmessage = function (event) {
-    if (event.type == 'Text') {
-      $('#output').text(event.data);
-    }
-  }
-}
-```
-
-- create new websocket
-- specify endpoint
-- when open give it a callback
-- when receive message another callback
 
 ---
 
