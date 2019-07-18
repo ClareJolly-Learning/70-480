@@ -24,6 +24,16 @@
     - [Web worker](#Web-worker)
     - [Creating objects](#Creating-objects)
   - [Remote Communication](#Remote-Communication)
+    - [XML HTTP](#XML-HTTP)
+    - [Reading JSON](#Reading-JSON)
+    - [JQuery](#JQuery)
+    - [AJAX call](#AJAX-call)
+      - [Demo 1 - jQuery selectors](#Demo-1---jQuery-selectors)
+      - [Demo 2 - JQuery Interactive](#Demo-2---JQuery-Interactive)
+      - [Demo 3 - jQuery HTTP Get](#Demo-3---jQuery-HTTP-Get)
+    - [AJAX](#AJAX)
+    - [Web Sockets](#Web-Sockets)
+  - [Even more questions](#Even-more-questions)
 
 ## Exam Tips
 
@@ -499,6 +509,366 @@ alert(student.get_name());
 
 ### Remote Communication
 
+#### XML HTTP
 
+```js
+var request = new XMLHttpRequest();
+request.open("GET", "/products/list", true);
+request.onreadystatechange = function () {
+  if (request.readyState === 4) {
+    var response = JSON.parse(request.responseText);
+    var productList = response.productList;
+    displayList();
+  }
+};
+request.send();
+```
+
+`request.open`
+
+Followed by callback on `request.onreadystatechange`
+
+---
+
+#### Reading JSON
+
+Once you get results back
+
+```js
+function displayLocations(result) {
+  for (var i = 0; i < result.d.length; i++) {
+    var product = result.d(i);
+    var item = "<li>" + product.Name + "</li>"
+    $("#products-list").append(item);
+  }
+}
+```
+
+#### JQuery
+
+![jquery](../images/jquery.png)
+
+Selectors in JQuery correlate to CSS3 selectors
+
+---
+
+#### AJAX call
+
+##### Demo 1 - jQuery selectors
+
+Common HTML for Demo 1(appears after the jQuery in the code)
+
+```html
+<h3>jQuery Selector</h3>
+<button id="buttonone" class="stylealpha">Style Me</button>
+<button id="buttontwo" class="stylebeta">Style Me Too</button>
+```
+
+---
+
+```js
+<script type="text/javascript">
+$(document).ready(function () {
+  
+  $('button').css('background', '#65a9d7').css('margin', '25px');
+  
+});
+</script>
+```
+
+`$('button').css('background', '#65a9d7').css('margin', '25px');`
+
+Anything that's a button, apply this css, background and margin
+
+![jq1](../images/jq1.png)
+
+---
+
+```js
+<script type="text/javascript">
+$(document).ready(function () {
+  
+  $('button').css('background', '#65a9d7').css('margin', '25px');
+  
+  $('button#buttonone').css('font-weight', 'bold');
+  
+});
+</script>
+```
+
+`$('button#buttonone').css('font-weight', 'bold');`
+
+A button with the ID of `buttonone` set the font weight to bold
+
+![jq2](../images/jq2.png)
+
+---
+
+```js
+<script type="text/javascript">
+$(document).ready(function () {
+  
+  $('button').css('background', '#65a9d7').css('margin', '25px');
+  
+  $('button#buttonone').css('font-weight', 'bold');
+
+  $('.stylebeta').css('border', '3px solid #96d1f8');
+  
+});
+</script>
+```
+
+`$('.stylebeta').css('border', '3px solid #96d1f8');`
+
+Anything with the class of `stylebeta` set border
+
+![jq3](../images/jq3.png)
+
+---
+
+```js
+<script type="text/javascript">
+$(document).ready(function () {
+  
+  $('button').css('background', '#65a9d7').css('margin', '25px');
+  
+  $('button#buttonone').css('font-weight', 'bold');
+
+  $('.stylebeta').css('border', '3px solid #96d1f8');
+  
+  $('#buttontwo').css('font-family','Georgia');
+  
+  
+});
+</script>
+```
+
+`$('#buttontwo').css('font-family','Georgia');`
+
+ID of `buttontwo` set the font to Georgia
+
+![jq4](../images/jq4.png)
+
+---
+
+```js
+<script type="text/javascript">
+$(document).ready(function () {
+  
+  $('button').css('background', '#65a9d7').css('margin', '25px');
+  
+  $('button#buttonone').css('font-weight', 'bold');
+
+  $('.stylebeta').css('border', '3px solid #96d1f8');
+  
+  $('#buttontwo').css('font-family','Georgia');
+  
+  $('button.stylealpha').css('border-radius','5px');
+  
+});
+</script>
+```
+
+`$('button.stylealpha').css('border-radius','5px');`
+
+Any button with the class of `stylealpha` set the border radius
+
+![jq5](../images/jq5.png)
+
+---
+
+##### Demo 2 - JQuery Interactive
+
+<!-- Common HTML for Demo 2 (appears after the jQuery in the code) -->
+
+<!-- 
+
+--- -->
+
+```js
+<script type="text/javascript">
+$(document).ready(function () {
+  
+  $('button#buttonfour').hide();
+
+  $('button#buttonthree').click(function () {
+  
+    $(this).hide();	
+    $('button#buttonfour').show();
+
+  });
+});
+</script>
+```
+
+```html
+<h3>jQuery Interactive</h3>
+<button id="buttonthree">Click Me</button>
+<button id="buttonfour">Hi There!</button>
+```
+
+When the DOM is ready,
+
+- `$('button#buttonfour').hide();` hide the button with the ID of `buttonfour`
+- `$('button#buttonthree').click` add a click handler to the button with the ID of `buttonthree` which has a callback function that ...
+- `$(this).hide();` hides itself (`buttonthree`)
+- `$('button#buttonfour').show();` beings back the button with the ID of `buttonfour`
+
+![jq6](../images/jq6.png)
+
+Click the button
+
+![jq7](../images/jq7.png)
+
+---
+
+##### Demo 3 - jQuery HTTP Get
+
+```js
+<script type="text/javascript">
+$(document).ready(function () {
+
+// add a click handler to the button with sendvote ID
+  $('button#sendvote').click(function () {
+// get the values from the elements with IDs of name and color and put in variables
+    var nameInput = $('#name').val();
+    var colorInput = $('#color').val();
+  
+// post to the api path api/data a JSON object with the name and color that uses your variables
+    $.post('api/data', { name: nameInput, color: colorInput })
+    //when done, callback function which takes the data and puts it as html into the paragraph with the ID of voteresult
+      .done(function (data) {
+
+        $('p#voteresult').html(data);
+
+      });
+
+  });
+
+});
+</script>
+```
+
+```html
+<h3>jQuery HTTP Get</h3>
+<div class="well">
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Vote on a Color</legend>
+    <div class="form-group">
+      <label class="col-lg-2 control-label" for="name">Name</label>
+      <div class="col-lg-10">
+        <input class="form-control" id="name" type="text" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label" for="color">Color</label>
+      <div class="col-lg-10">
+        <input class="form-control" id="color" type="text" placeholder="Color">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button class="btn btn-primary" id="sendvote" type="submit">Send Vote</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Result</label>
+      <div class="col-lg-10">
+        <p id="voteresult"></p>
+      </div>
+    </div>
+  </fieldset>
+  </form>
+  </div>
+```
+
+Important to know the order of the post request
+
+` $.post('api/data', { name: nameInput, color: colorInput })`
+
+` $.post(<api endpoint>, <JSON object>)`
+
+Then add a `.done`
+
+![jq9](../images/jq9.png)
+
+<details><summary>For reference - api details</summary>
+
+```js
+app.post('/api/data', function(req, res) {
+  
+  var isValid = false;
+  if (req.body) {
+  if (req.body.hasOwnProperty('name') && req.body.hasOwnProperty('color')) {
+    isValid = true;   
+  }  
+  }
+  
+  if (!isValid) {
+    return res.status(400).send('Post syntax incorrect.  Must have a name and color property.');
+  } 
+  else {
+    var response = req.body.name + ' chose the color ' + req.body.color + '.';
+    console.log(response);  
+    return res.status(201).send(response)
+  }
+  
+});
+```
+
+</details>
+
+---
+
+#### AJAX
+
+```js
+var productJSON = JSON.stringify({ newProduct: product });
+$.ajax({
+  url: "/Services/ProductService.svc/Add",
+  type: "POST",
+  dataType: "json",
+  contentType: "application/json; charset=utf-8",
+  data: productJSON,
+  success: displayLocations,
+  failure: displayError
+})
+```
+
+in jQuery, the post, get, put and delete is essentially doing an AJAX call.  You can get more detailed into the parameters using this syntax however.
+
+---
+
+#### Web Sockets
+
+Asynchronous way to send communication back and forth in a connected channel.  Communicate from web application to server and vice versa.  Doesn't need a http request.  Useful for chat
+
+```js
+if (window.WebSocket){
+  var socket = new WebSocket('wss://url.com/endpoint');
+  socket.onopen = function () {
+    socket.send('hello, world');
+  }
+  socket.onmessage = function (event) {
+    if (event.type == 'Text') {
+      $('#output').text(event.data);
+    }
+  }
+}
+```
+
+- create new websocket
+- specify endpoint
+- when open give it a callback
+- when receive message another callback
+
+---
+
+### Even more questions
+
+![questions](../images/q6.png)
+
+Answer - c: update line 4 to `function updatePage() { $("#output").text("Hello, world!");}`
 
 ---
