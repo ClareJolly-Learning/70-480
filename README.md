@@ -15,4 +15,5 @@ My personal notes on revising for the Microsoft 70-480 Programming in HTML with 
 
 ## Other Resources
 
-- [Microsoft Ignite 2015 Exam Prep Session for Exam 70 480 Programming in HTML5 with JavaScript and CSS](./other-resources/exam-prep-vid.md#readme)
+- [Microsoft Exam Prep - Exam 70 480 Programming in HTML5 with JavaScript and CSS](./other-resources/exam-prep-vid.md#readme)
+<!-- - [Microsoft Certified Professional Exam Prep - Exam 70 480 Programming in HTML5 with JavaScript and CSS3](./other-resources/exam-prep-vid-2.md#readme) -->

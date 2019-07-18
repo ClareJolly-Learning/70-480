@@ -3,6 +3,8 @@
 [Link to video](https://www.youtube.com/watch?v=1M2LdJDBLwg)
 [github](https://github.com/SidneyAndrewsOpsgility/HTML5Demos)
 
+Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-Programming-in-HTML5-with-JavaScript-and-CSS3?term=70-480&lang-en=true)
+
 - [Exam Tips](#Exam-Tips)
 - [Exam Topics](#Exam-Topics)
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
@@ -18,7 +20,7 @@
     - [Audio/Video](#AudioVideo)
   - [Application cache](#Application-cache)
     - [Updating Application cache](#Updating-Application-cache)
-  - [Geolocation](#Geolocation)
+    - [Geolocation](#Geolocation)
   - [More questions](#More-questions)
   - [JavaScript](#JavaScript)
     - [Web worker](#Web-worker)
@@ -172,9 +174,31 @@ Apply an effect to an element
   - `ease-in-out`
   - `cubic-bezier`
 
+```css
+    body {
+      font-size: 36pt;
+    }
+
+    #target {
+      color: blue;
+      transition-property: all;
+      transition-duration: 2s;
+    }
+
+    #target:hover {
+      color: red;
+    }
+```
+
+```html
+<div id="target">Hello, World!</div>
+```
+
 ---
 
 #### Canvas
+
+objects created in canvas is not part of the DOM (SVGs are)
 
 ```html
 <canvas id="canvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
@@ -310,7 +334,7 @@ Answer - b: `input:required { background-color: yellow;`
 
 #### Audio/Video
 
-Video
+**Video**
 
 ```html
 <video width="320" height="240" poster="logo.jpg"
@@ -321,7 +345,17 @@ Your browser does not support the video tag.
 </video>
 ```
 
-Audio
+All the possible controls:
+
+- controls
+- autobuffer
+- autoplay
+- loop
+- mute
+
+The order of the sources and then the text is the fallback if the browser doesn't support a format
+
+**Audio**
 
 ```html
 <audio controls>
@@ -335,19 +369,22 @@ Your browser does not support the audio element.
 
 ### Application cache
 
-Caching certain files and what files to fallback to
+Caching certain files and what files to fallback to.  
 
 ```
 CACHE MANIFEST
 #VERSION 1.0
 
+// Files to cache in case of disconnection
 CACHE:
 /index.html/styles/site.css
 /images/logo.jpg
 
+// Paths to ALWAYS use the connected version
 NETWORK:
 /members
 
+// If can't access a particular location, fallback to another file
 FALLBACK:
 /details/ /offline.html
 ```
@@ -356,10 +393,12 @@ FALLBACK:
 
 #### Updating Application cache
 
+Problem with application cache - browser can become aggressive in caching files.
+
 Swap cache and download new files
 
 ```js
-//download new application cache
+//download new application cache - async
 applicationCache.Update();
 
 // wait for the data to be downloaded, then swap cache
@@ -370,13 +409,22 @@ if (aplicationCache.status == 4) {
 
 ---
 
-### Geolocation
+#### Geolocation
 
 Being able to use the client/browser geolocation
 
 Methods, options and return data
 
 ![geo](../images/geo.png)
+
+- `getCurrentPosition`
+- `watchPosition`
+
+Can then get back the details listed in Return Data
+
+Can specify options such as accuracy and timeout etc
+
+Always up to the user to indicate whether they want to give you the info
 
 ---
 
@@ -870,8 +918,6 @@ if (window.WebSocket){
 ![questions](../images/q6.png)
 
 Answer - c: update line 4 to `function updatePage() { $("#output").text("Hello, world!");}`
-
----
 
 ![question](../images/q7.png)
 
