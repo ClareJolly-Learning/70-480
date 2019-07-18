@@ -872,3 +872,9 @@ if (window.WebSocket){
 Answer - c: update line 4 to `function updatePage() { $("#output").text("Hello, world!");}`
 
 ---
+
+![question](../images/q7.png)
+
+Answer - d: `$('.submit').click(function () { $(this).prop('disabled', true); })`
+
+---
