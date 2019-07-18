@@ -29,7 +29,7 @@
     - [JQuery](#JQuery)
     - [AJAX call](#AJAX-call)
       - [Demo 1 - jQuery selectors](#Demo-1---jQuery-selectors)
-      - [Demo 2 - JQuery Interactive](#Demo-2---JQuery-Interactive)
+      - [Demo 2 - jQuery Interactive](#Demo-2---jQuery-Interactive)
       - [Demo 3 - jQuery HTTP Get](#Demo-3---jQuery-HTTP-Get)
     - [AJAX](#AJAX)
     - [Web Sockets](#Web-Sockets)
@@ -677,7 +677,7 @@ Any button with the class of `stylealpha` set the border radius
 
 ---
 
-##### Demo 2 - JQuery Interactive
+##### Demo 2 - jQuery Interactive
 
 <!-- Common HTML for Demo 2 (appears after the jQuery in the code) -->
 
