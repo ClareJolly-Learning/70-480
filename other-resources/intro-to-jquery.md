@@ -442,8 +442,63 @@ $('#turnEmOff').on('click', function(ev) {
 
 - `.error()` - Called if an element is not loaded correctly
 - `.resize()` - When the size of the browser window changes
-- `.scroll()` - When the user scrolls to a different place in an element
+- `.scroll()` - When the user scrolls to a different place in an element or page
 
+```html
+<style>
+#scroller {
+  width:200px;
+  height:400px;
+  border:solid 1px gray;
+  overflow-y:scroll;
+}
+</style>
+<button id="throw">Throw an error</button>
+<div id="scroller">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa vitae tortor condimentum lacinia quis vel eros donec.</p>
+
+<p>Semper risus in hendrerit gravida rutrum. Non arcu risus quis varius quam erdiet. Diam maecenas sed enim ut sem. Turpis tincidunt id aliquet risus feugiat in ante.</p>
+
+<p>Id donec ultrices tincidunt arcu. Integer eget aliquet nibh praesent tristique magna sit. Habitant morbi tristique senectus et netus et adipiscing diam donec adipiscing tristique. Molestie at elementum eu.</p>
+
+<p>Nibh venenatis cras sed felis eget velit aliquet. Non consectetur a erat nam at lectus. Tortor dignissim convallis aenean et tortor at risus. Tempus elementum pulvinar etiam non quam. Eu augue ut lectus arcu bibendum.</p>
+</div>
+```
+
+```js
+
+$('#scroller').on('scroll', function(ev) {
+  console.log('scrolling the scroller div');
+});
+
+$(window)
+  .on('scroll', function(ev) {
+    console.log('scrolling the page');
+  })
+  .on('resize', function(ev) {
+    console.log('resizing the browser to ' + window.outerWidth + 'x' + window.outerHeight);
+  })
+  .on('error', function(ev) {
+    console.log('an error occurred');
+  });
+
+$('#throw').on('click', function(ev) {
+  throw "oops";  
+});
+
+```
+
+scrolling the browser window and the internal div
+
+![ev2](../images/ev5.png)
+
+Click the throw error button
+
+![ev3](../images/ev3.png)
+
+Resizing the browser
+
+![ev4](../images/ev4.png)
 
 ---
 
@@ -464,6 +519,23 @@ $('#turnEmOff').on('click', function(ev) {
 - `.focusout()` - When an element loses focus
 - `.select()` - When the user makes a text selection inside
 - `.submit()` - When the user is attempting to submit a form
+
+```html
+<input type="text" id="myinput"/>
+<input type="text" id="myinput2"/>
+```
+
+```js
+$('#myinput')
+  .on('keyup',function(ev){
+    console.log(ev.which);
+  })
+  .on('focus', function(ev){
+    console.log('focus is important');
+  });
+```
+
+![ev6](../images/ev6.png)
 
 ---
 
