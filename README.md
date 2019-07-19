@@ -16,5 +16,5 @@ My personal notes on revising for the Microsoft 70-480 Programming in HTML with 
 ## Other Resources
 
 - [Microsoft Exam Prep - Exam 70 480 Programming in HTML5 with JavaScript and CSS](./other-resources/exam-prep-vid.md#readme)
-- [MIntroduction to jQuery](./other-resources/intro-to-jquery.md#readme)
+- [Introduction to jQuery](./other-resources/intro-to-jquery.md#readme)
 - [Javascript for Experienced Developers](./other-resources/js-for-experienced-developers.mdreadme)
