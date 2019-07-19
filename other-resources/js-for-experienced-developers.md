@@ -1,7 +1,7 @@
 # Javascript for Experienced Developers <!-- omit in toc -->
 
-[Link to video](https://www.youtube.com/watch?v=5Rcjl-kEaNc)
-[github](https://github.com/MicrosoftLearning/JavaScript-Experienced-Developers)
+- [Link to video](https://www.youtube.com/watch?v=5Rcjl-kEaNc)
+- [github](https://github.com/MicrosoftLearning/JavaScript-Experienced-Developers)
 
 - [Exam Tips](#Exam-Tips)
 - [Exam Topics](#Exam-Topics)
