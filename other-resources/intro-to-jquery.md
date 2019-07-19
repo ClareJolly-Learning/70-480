@@ -16,6 +16,8 @@
 - [Manipulating the DOM](#Manipulating-the-DOM)
   - [Element manipulation](#Element-manipulation)
   - [Modifying attributes](#Modifying-attributes)
+    - [Inside elements](#Inside-elements)
+    - [Copying elements](#Copying-elements)
   - [Styling and dimensions](#Styling-and-dimensions)
 
 ---
@@ -174,13 +176,61 @@ $("p").css("background-color","red").css("color","green");
 
 ### Element manipulation
 
+```html
+<div id="div">
+  <p>text text text</p>
+  <p id="p">I am some text</p>
+  <p id="notp">I am some text</p>
+</div
+```
 
+```js
+// methods
+$("#p").html("The quick brown fox jumped over the <em>lazy</em> dog");
+$("#notp").text("The quick brown fox jumped over the lazy dog");
+$("#div p:first").text("This change the first paragraph of the #div div");
+```
+
+![jq](../images/jquery-manip.png)
 
 ---
 
 ### Modifying attributes
 
+#### Inside elements
 
+```js
+$("content").appendTo("selector"); // take content and append to the selector
+$("content").prependTo("selector"); // take content and prepend to the selector
+
+$("selector").appendTo("<li>this is after</li>"); //start with selector, then add the content
+$("selector").prependTo("<li>this is after</li>");
+
+// both types do the same
+```
+
+---
+
+#### Outside elements
+
+```js
+$("content").insertAfter("selector"); // insert after the selector
+$("content").insertBefore("selector"); // insert before the selector
+
+$("selector").after("<li>this is after</li>"); // insert after the selector
+$("selector").before("<li>this is after</li>"); // insert before the selector
+
+$(selector).before(content, function(index) {}); // take selector, call before or after, tell it to run function to get it done
+
+```
+
+---
+
+#### Copying elements
+
+```js
+$("selector").clone().appendTo("selector2"); // clone selector, then append to another selector
+```
 
 ---
 
