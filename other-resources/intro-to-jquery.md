@@ -722,19 +722,54 @@ AJAX - asynchronous javascript and xml (rather than xml, usually use JSON)
 
 ### Global Ajax event handlers
 
-
+- `.ajaxSend()`
+- `.ajaxStart()`
+- `.ajaxStop()`
+- `.ajaxComplete()`
+- `.ajaxSuccess()`
+- `.ajaxError()`
 
 ---
 
 ### Helper functions
 
+- `jQuery.param()` - `$.param`
 
+    ```js
+    // <= 1.3.2:
+    $.param({ a: [2, 3, 4 ]}); // "a=2&a=3&a=4"
+    // >= 1.4:
+    $.param({ a: [2, 3, 4 ]}); // "a[]=2&a[]=3&a[]=4"
+
+    // <= 1.3.2:
+    $.param({ a: { b: 1, c: 2}, d: [ 3, 4, {e: 5} ] }); // "a=[object+Object]&d=3&d=4&d=[object+Object]"
+
+    // <= 1.4:
+    $.param({ a: { b: 1, c: 2}, d: [ 3, 4, {e: 5} ] }); // "a=[b]=1&a[c]&d[]=3&d[]=4&d[2][e]=5"
+    ```
+
+- `.serialize()`
+
+    ![ser](../images/ser1.png)
+
+    If you have a form on a page, call serialize against it to get an output like this which the ajax is expecting
+
+- `.serializeArray()`
+
+    ![ser](../images/ser2.png)
+
+    This produced the following data structure (provided that the browser supports `console.log`)
+
+    ![ser](../images/ser3.png)
 
 ---
 
 ### Low-level interface
 
-
+- `$.ajax()` - Perform an asynchronois HTTP (ajax) request
+- `$.ajaxPrefilter()` - Handle custom ajax options before requests are sent
+- `$.ajaxSetup()` - Set default values for future ajax requests (not recommended)
+- `$.ajaxTransport()` - Allows for ajax transmission of custom data types
 
 ---
 
