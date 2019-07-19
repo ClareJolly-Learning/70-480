@@ -38,6 +38,8 @@
   - [Fading](#Fading)
   - [Sliding](#Sliding)
   - [Customer effects](#Customer-effects)
+- [Ajax and Async](#Ajax-and-Async)
+- [Libraries](#Libraries)
 
 ---
 
@@ -473,5 +475,17 @@ Fading adjusts the opacity of the selected element
 - `.delay()` - Set a timer to delay execution of subsequent items in the queue
 - `.stop()` - Stop the animation
 - `.finish()` - Stop the animation and clear queue
+
+---
+
+## Ajax and Async
+
+
+
+---
+
+## Libraries
+
+
 
 ---
