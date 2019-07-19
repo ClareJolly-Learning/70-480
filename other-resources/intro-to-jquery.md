@@ -2,13 +2,25 @@
 
 [Link to video](https://channel9.msdn.com/Series/Introduction-to-jQuery)
 
-- [Basics](#Basics)
-  - [Getting started](#Getting-started)
+- [Getting started](#Getting-started)
   - [Document Ready](#Document-Ready)
+- [Selectors](#Selectors)
+  - [Syntax](#Syntax)
+  - [Multiple selectors](#Multiple-selectors)
+  - [Basic selectors](#Basic-selectors)
+  - [Attribute selectors](#Attribute-selectors)
+  - [Hierarchy selectors](#Hierarchy-selectors)
+  - [Positional selectors](#Positional-selectors)
+  - [Filters - different kind of selector](#Filters---different-kind-of-selector)
+  - [Chaining](#Chaining)
+- [Manipulating the DOM](#Manipulating-the-DOM)
+  - [Element manipulation](#Element-manipulation)
+  - [Modifying attributes](#Modifying-attributes)
+  - [Styling and dimensions](#Styling-and-dimensions)
 
-## Basics
+---
 
-### Getting started
+## Getting started
 
 Import the jQuery library via CDN or script
 
@@ -33,5 +45,147 @@ $(document).ready(function(){
   // run this when ready
 })
 ```
+
+---
+
+## Selectors
+
+jQuery selectors derived from CSS selectors
+
+Selectors for:
+
+- Elements, by ID, attribute, name, etc
+- Attribute
+- Form elements
+- Hierarchy (parent, child, descendent, sibling)
+- Elements by state (enabled, disabled, hidden, selected)
+- Position
+- Class
+
+Specificity - select things with precision
+
+### Syntax
+
+```js
+$("selector");
+$("selector").method();
+```
+
+### Multiple selectors
+
+```js
+// comma separated selectors
+$("selector1, selector2, selector N");
+
+// 
+$("element[attr='value'][attr='value2']");
+```
+
+**Wrapped sets**
+
+If selected a group of elements can get at them individually
+
+```js
+$("selector")[0];
+$("selector").get(0);
+```
+
+Adds to wrapped set but not DOM.  Work with things 'off to the side' before putting back into DOM
+
+```js
+$("selector").add("<div>Added content</div>");
+```
+
+---
+
+### Basic selectors
+
+```js
+$("*") // selecting everything
+$("elementName") // tagname (p, a, div, etc)
+$("#elemendId") // ID - should only ever be 1
+$(".class") // class
+```
+
+---
+
+### Attribute selectors
+
+```js
+$("selector[attr]"); // that has an attribute - required for example
+$("selector[attr='value']"); // attribute equalling a value
+$("selector[attr^'value']"); // attribute begins with
+$("selector[attr$'value']"); // attribute ends with
+$("selector[attr*'value']"); // attribute contains
+```
+
+---
+
+### Hierarchy selectors
+
+```js
+$("ancestor descendant")
+$("parent elem > child elem")
+$("prev elem + next elem")
+$("prev sibling - next sibling")
+```
+
+---
+
+### Positional selectors
+
+```js
+$("element:first";)
+$("element:last";)
+```
+
+### Filters - different kind of selector
+
+```js
+$(":button");
+$(":checkbox");
+$(":password");
+$(":submit");
+$(":text");
+$(":file");
+
+$(":contains(text)");
+$(":not(selector)");
+```
+
+---
+
+### Chaining
+
+Allows you to run multiple commands on a wrapped set while only accessing those DOM elements once
+
+```js
+$("selector").method();
+$("selector").method().method2();
+```
+
+```js
+$("p").css("background-color","red").css("color","green");
+```
+
+---
+
+## Manipulating the DOM
+
+### Element manipulation
+
+
+
+---
+
+### Modifying attributes
+
+
+
+---
+
+### Styling and dimensions
+
+
 
 ---
