@@ -365,12 +365,12 @@ $("selector").position();
 
 #### Attaching to events
 
-- `.on()` and `.off()` - most important/popular - replaces the next 4
+- `.on()` and `.off()` - most important/popular - replaces the next 4.  Turn on or off event handler
 - `.bind()` and `.unbind()` - tie up an event, bind a function to an event
 - `.delegate()` and `.undelegated()`
 - `.one()`
 - `.live()` and `.die()` - kind of document ready but at window level
-- `.trigger()` and `.triggerHandler()`
+- `.trigger()` and `.triggerHandler()` - 'remotely' trigger another event
 
 ```html
 <style>
@@ -405,6 +405,7 @@ $('div').on('click',function(ev) {
   console.log(ev.currentTarget.dataset.name);
 
   // only handle 1 time - won't also log the parent
+  // clicking on child 3 is also like clicking on the parent div
   ev.stopPropagation();
 });
 
@@ -413,8 +414,8 @@ $('#triggerIt').on('click', function(ev) {
 });
 
 $('#turnEmOff').on('click', function(ev) {
-  $('div').off(); //remove ALL event handlers
-  //$('div').off('click'); //just remove click handlers
+  $('div').off(); // remove ALL event handlers
+  // $('div').off('click'); // just remove click handlers
 });
 ```
 
@@ -424,14 +425,16 @@ $('#turnEmOff').on('click', function(ev) {
 
 #### Event object
 
+`ev` in the above examples
+
 - Holds all of the event properties
 - Helpful properties include…
-  - `.currentTarget`
-  - `.type`
-  - `.which`
-  - `.timestamp`
-  - `.target`
-  - `.data`
+  - `.currentTarget` - which element are we talking about right now
+  - `.type` - type of event (e.g. click)
+  - `.which` - if pressing a key or clicking a button, which one was used.
+  - `.timestamp` - exactly when clicked on (ms since 1970)
+  - `.target` 
+  - `.data` - can pass in data that might be useful
 
 ---
 
