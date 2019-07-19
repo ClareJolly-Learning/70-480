@@ -1,12 +1,12 @@
 # Microsoft Exam Prep Session - Exam 70 480 Programming in HTML5 with JavaScript and CSS <!-- omit in toc -->
 
-[Link to video](https://www.youtube.com/watch?v=1M2LdJDBLwg)
-[github](https://github.com/SidneyAndrewsOpsgility/HTML5Demos)
+- [Link to video](https://www.youtube.com/watch?v=1M2LdJDBLwg)
+- [github](https://github.com/SidneyAndrewsOpsgility/HTML5Demos)
 
 Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-Programming-in-HTML5-with-JavaScript-and-CSS3?term=70-480&lang-en=true)
 
-- [Exam Tips](#Exam-Tips)
-- [Exam Topics](#Exam-Topics)
+- [**Exam Tips**](#Exam-Tips)
+- [**Exam Topics**](#Exam-Topics)
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
     - [SVG shapes](#SVG-shapes)
       - [Path Commands](#Path-Commands)
@@ -37,7 +37,7 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
       - [Demo 3 - jQuery HTTP Get](#Demo-3---jQuery-HTTP-Get)
   - [Even more questions](#Even-more-questions)
 
-## Exam Tips
+## **Exam Tips**
 
 **Exam outline**
 
@@ -46,7 +46,7 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
 - Implement and manipulate document structures and objects (DOM and some jQuery) (25%)
 - Access and Secure data (25%)
 
-## Exam Topics
+## **Exam Topics**
 
 ### Drawing, Style and Animations
 
