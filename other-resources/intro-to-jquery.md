@@ -44,7 +44,6 @@
   - [Low-level interface](#Low-level-interface)
   - [Shorthand methods](#Shorthand-methods)
   - [Deferred object](#Deferred-object)
-- [**Libraries**](#Libraries)
 
 ---
 
@@ -888,8 +887,9 @@ function myDeferred() {
 
 ---
 
-## **Libraries**
+<!-- ## **Libraries**
 
+- jQuery
+- Javascript
 
-
----
+--- -->
