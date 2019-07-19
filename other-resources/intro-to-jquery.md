@@ -4,7 +4,7 @@
 
 - [**Getting started**](#Getting-started)
   - [Document Ready](#Document-Ready)
-- [**Selectors**](#Selectors)
+- [**Selection**](#Selection)
   - [Syntax](#Syntax)
   - [Multiple selectors](#Multiple-selectors)
   - [Basic selectors](#Basic-selectors)
@@ -71,7 +71,7 @@ $(document).ready(function(){
 
 ---
 
-## **Selectors**
+## **Selection**
 
 jQuery selectors derived from CSS selectors
 
@@ -365,12 +365,60 @@ $("selector").position();
 
 #### Attaching to events
 
-- `.on()` and `.off()`
-- `.bind()` and `.unbind()`
+- `.on()` and `.off()` - most important/popular - replaces the next 4
+- `.bind()` and `.unbind()` - tie up an event, bind a function to an event
 - `.delegate()` and `.undelegated()`
 - `.one()`
-- `.live()` and `.die()`
+- `.live()` and `.die()` - kind of document ready but at window level
 - `.trigger()` and `.triggerHandler()`
+
+```html
+<style>
+div { margin: 2px; font:bold 9pt 'Segoe UI';}
+.parent {
+  border:solid 2px black;
+  color:black;
+}
+.child {
+  border:solid 2px gray;
+  height:40px;
+  color:gray;
+}
+</style>
+<div class="parent" data-name="parent">
+  PARENT
+  <div class="child" data-name="child 1">CHILD 1</div>
+  <div class="child" data-name="child 2">CHILD 2</div>
+  <div class="child" data-name="child 3">CHILD 3</div>
+</div>
+<button id="turnEmOff">Turn 'em off</button>
+<button id="triggerIt">Trigger on CHILD 3</button>
+```
+
+```js
+// select all divs > use the on method to add a click event, then the handler function
+$('div').on('click',function(ev) {
+
+    // currentTarget = DOM object clicked on
+    // dataset = all the data- tags
+    // name - from data-name="child 1"
+  console.log(ev.currentTarget.dataset.name);
+
+  // only handle 1 time - won't also log the parent
+  ev.stopPropagation();
+});
+
+$('#triggerIt').on('click', function(ev) {
+  $('div[data-name="child 3"]').trigger('click'); //programmatically cause a click to happen just as if the user had actually clicked it
+});
+
+$('#turnEmOff').on('click', function(ev) {
+  $('div').off(); //remove ALL event handlers
+  //$('div').off('click'); //just remove click handlers
+});
+```
+
+![ev1](../images/event1.png)
 
 ---
 
