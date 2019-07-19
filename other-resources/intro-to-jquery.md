@@ -39,6 +39,11 @@
   - [Sliding](#Sliding)
   - [Custom effects](#Custom-effects)
 - [**Ajax and Async**](#Ajax-and-Async)
+  - [Global Ajax event handlers](#Global-Ajax-event-handlers)
+  - [Helper functions](#Helper-functions)
+  - [Low-level interface](#Low-level-interface)
+  - [Shorthand methods](#Shorthand-methods)
+  - [Deferred object](#Deferred-object)
 - [**Libraries**](#Libraries)
 
 ---
@@ -712,6 +717,34 @@ Click child 1 and 2
 ---
 
 ## **Ajax and Async**
+
+AJAX - asynchronous javascript and xml (rather than xml, usually use JSON)
+
+### Global Ajax event handlers
+
+
+
+---
+
+### Helper functions
+
+
+
+---
+
+### Low-level interface
+
+
+
+---
+
+### Shorthand methods
+
+
+
+---
+
+### Deferred object
 
 
 
