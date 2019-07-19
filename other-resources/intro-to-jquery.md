@@ -766,22 +766,125 @@ AJAX - asynchronous javascript and xml (rather than xml, usually use JSON)
 
 ### Low-level interface
 
-- `$.ajax()` - Perform an asynchronois HTTP (ajax) request
+- `$.ajax()` - Perform an asynchronous HTTP (ajax) request
 - `$.ajaxPrefilter()` - Handle custom ajax options before requests are sent
 - `$.ajaxSetup()` - Set default values for future ajax requests (not recommended)
 - `$.ajaxTransport()` - Allows for ajax transmission of custom data types
+
+```html
+<style>
+#results {
+  border:solid 2px gray;
+  height:200px;
+}
+</style>
+<div id="results">
+</div>
+```
+
+```js
+$.ajax({
+    url:'http://services.odata.org/V4/Northwind/Northwind.svc/Products?$select=ProductName',
+    //url:'https://cfcorsdemo.azurewebsites.net/api/values',
+    success: function(data) {
+        console.log(data.value);
+    }
+});
+```
 
 ---
 
 ### Shorthand methods
 
+Don't need to pass in settings.  Just need url and callback function on success
 
+- `$.get()` - Load data from the server using a HTTP GET request
+- `$.post()` - Load data from the server using a HTTP POST request
+- `$.getJSON()` - Load JSON-encoded data from the server using a HTTP GET request
+- `$.getScript()` - Load a JavaScript file from the server using a HTTP GET request and then execute it
+- `$.load()` - Load data from the server and place the returned HTML into the matched element
+
+```js
+$.get('https://cfcorsdemo.azurewebsites.net/api/values',
+    function(data) {
+        console.log(data);
+    }
+);
+
+$.post(
+    'https://cfcorsdemo.azurewebsites.net/api/values',
+    {value:"value"},
+    function(data) {
+        console.log(data);
+    }
+);
+```
+
+**load**
+
+```html
+<style>
+#results {
+  border:solid 2px gray;
+  height:200px;
+}
+</style>
+<div id="results">
+  
+</div>
+```
+
+```js
+$('#results').load('https://cfcorsdemo.azurewebsites.net/api/values');
+```
 
 ---
 
 ### Deferred object
 
+The deferred object can register and invoke callback queues and relay the callbacks success or failure asynchronously.  It can be chained, but it is a different oject than $
 
+- `$.Deferred()`
+- `deferred.promise()`
+- `deferred.then()` and `.done()`
+- `deferred.fail()` and `.always()`
+- `$.when()`
+- `.promise()`
+
+```html
+<style>
+#results {
+  border:solid 1px gray;
+  height:200px;
+}
+</style>
+<div id="results">
+  
+</div>
+```
+
+```js
+//bad!
+//$.get("https://cfcorsdemo.azurewebsites.net/api/values");
+//$('#results').text('done'); //this is an outright lie!
+
+//good
+$.get("https://cfcorsdemo.azurewebsites.net/api/values")
+  .then(function() {
+    $('#results').text('done with the service call'); //this is truly happening AFTER the return
+  });
+
+myDeferred()
+  .then(function() {
+    $('#results').append('</br>done with the custom deferred function');
+  });
+
+function myDeferred() {
+  var d = $.Deferred();
+  setTimeout(function() { d.resolve(); }, 5000);
+  return d.promise();
+}
+```
 
 ---
 
