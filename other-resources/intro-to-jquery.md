@@ -26,11 +26,18 @@
   - [Styling and dimensions](#Styling-and-dimensions)
 - [Events](#Events)
   - [Attachment and the Event object](#Attachment-and-the-Event-object)
+    - [Attaching to events](#Attaching-to-events)
+    - [Event object](#Event-object)
   - [Browser events](#Browser-events)
   - [Document loading events](#Document-loading-events)
   - [Form events](#Form-events)
   - [Keyboard events](#Keyboard-events)
   - [Mouse events](#Mouse-events)
+- [Effects](#Effects)
+  - [Basic effects](#Basic-effects)
+  - [Fading](#Fading)
+  - [Sliding](#Sliding)
+  - [Customer effects](#Customer-effects)
 
 ---
 
@@ -354,36 +361,117 @@ $("selector").position();
 
 ### Attachment and the Event object
 
+#### Attaching to events
 
+- `.on()` and `.off()`
+- `.bind()` and `.unbind()`
+- `.delegate()` and `.undelegated()`
+- `.one()`
+- `.live()` and `.die()`
+- `.trigger()` and `.triggerHandler()`
+
+---
+
+#### Event object
+
+- Holds all of the event properties
+- Helpful properties include…
+  - `.currentTarget`
+  - `.type`
+  - `.which`
+  - `.timestamp`
+  - `.target`
+  - `.data`
 
 ---
 
 ### Browser events
 
+- `.error()` - Called if an element is not loaded correctly
+- `.resize()` - When the size of the browser window changes
+- `.scroll()` - When the user scrolls to a different place in an element
 
 
 ---
 
 ### Document loading events
 
-
+- `.load()` - When an element is being loaded
+- `.ready()` - When the DOM is loaded and ready (minus content like images).  Use `$(function)` as a shortcut
+- `.unload()` - Opposite of load, when an element is being unloaded
 
 ---
 
 ### Form events
 
-
+- `.change()` - When an element's value changes
+- `.focus()` - When an element receives focus
+- `.blur()` - When an element loses focus
+- `.focusin()` - When an element or any nested elements receives focus
+- `.focusout()` - When an element loses focus
+- `.select()` - When the user makes a text selection inside
+- `.submit()` - When the user is attempting to submit a form
 
 ---
 
 ### Keyboard events
 
-
+- `.keydown()` - When a key is pressed down
+- `.keypress()` - When the browser registers keyboard input (may vary by browser!)Not triggered by Shift, Esc, delete, etc.
+- `.keyup()` - When a key returns to the up position
 
 ---
 
 ### Mouse events
 
+- `.click()`
+- `.dblclick()`
+- `.hover()`
+- `.mousedown()`
+- `.mouseenter()`
+- `.mouseleave()`
+- `.mousemove()`
+- `.mouseout()`
+- `.mouseover()`
+- `.mouseup`()
 
+---
+
+## Effects
+
+### Basic effects
+
+- `.hide()`
+- `.show()`
+- `.toggle()` - If it's showing, hide it. If it's hiding, show it.
+
+---
+
+### Fading
+
+Fading adjusts the opacity of the selected element
+
+- `.fadeIn()`
+- `.fadeOut()`
+- `.fadeTo()` - Set the opacity to a set value
+- `.fadeToggle()` - If it's showing, fade it out. If it's hidden, fade it in.
+
+---
+
+### Sliding
+
+- `.slideUp()` - Hides an element using a sliding motion
+- `.slideDown()` - Shows an element using a sliding motion
+- `.slideToggle()` - If it's showing, then hide it. If it's hiding, then show it.
+
+---
+
+### Customer effects
+
+- `.animate()` - Perform a custom animation of a set of CSS properties
+- `.queue()`, `.dequeue()`, and `.clearQueue()` - Control the queue of functions to be executed on the matched elements
+- `.delay()` - Set a timer to delay execution of subsequent items in the queue
+- `.stop()` - Stop the animation
+- `.finish()` - Stop the animation and clear queue
 
 ---
