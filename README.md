@@ -13,6 +13,8 @@ Accelerated Certification Prep Jump Start
 - [Module 5: DOM Interactions](./jumpstart/5.md#readme)
 - [Module 6: JavaScript Advanced Topics](./jumpstart/6.md#readme)
 
+**Useful links**
+
 - [Link to github for some demo code](https://github.com/codefoster/codeshow)
 
 ---
