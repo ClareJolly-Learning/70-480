@@ -15,9 +15,14 @@
   - [Chaining](#Chaining)
 - [Manipulating the DOM](#Manipulating-the-DOM)
   - [Element manipulation](#Element-manipulation)
-  - [Modifying attributes](#Modifying-attributes)
     - [Inside elements](#Inside-elements)
     - [Copying elements](#Copying-elements)
+    - [Create new elements](#Create-new-elements)
+    - [Removing elements](#Removing-elements)
+    - [Replacing elements](#Replacing-elements)
+    - [Wrapping elements](#Wrapping-elements)
+  - [Modifying attributes](#Modifying-attributes)
+    - [Styling elements](#Styling-elements)
   - [Styling and dimensions](#Styling-and-dimensions)
 
 ---
@@ -195,8 +200,6 @@ $("#div p:first").text("This change the first paragraph of the #div div");
 
 ---
 
-### Modifying attributes
-
 #### Inside elements
 
 ```js
@@ -230,6 +233,82 @@ $(selector).before(content, function(index) {}); // take selector, call before o
 
 ```js
 $("selector").clone().appendTo("selector2"); // clone selector, then append to another selector
+```
+
+---
+
+#### Create new elements
+
+```js
+$("<a/>", {
+  html: "This is a <strong>new</strong> link",
+  "class":"link",
+  href: "page.html"
+}).appendTo("p");
+```
+
+```html
+<p>I am text</p>
+```
+
+Choose selector, the set the attributes
+
+Creates an element but doesn't attach to the DOM so need to add append or similar
+
+![create](../images/jq-create.png)
+
+In this example, multiple `<p>` tags will get the link added to it
+
+![create](../images/jq-create-multi.png)
+
+---
+
+#### Removing elements
+
+```js
+$("selector").remove(); // just get removed
+$("selector").detach(); // can detach and make changes and then add back to the DOM - performant
+$("selector").empty(); // empties from the DOM
+```
+
+---
+
+#### Replacing elements
+
+```js
+$("selector").replaceAll("content");
+$("selector").replaceWith("content");
+```
+
+#### Wrapping elements
+
+```js
+$("selector").wrap();
+$("selector").wrapAll();
+$("selector").wrapInner();
+$("selector").unwrap();
+```
+
+---
+
+### Modifying attributes
+
+```js
+$("selector").attr("name", "value"); // name of attribute and the value to change it to
+$("selector").prop("name", "value"); // name of property and the value to change it to
+$("selector").removeAttr("name"); // remove attribute
+$("selector").removeProp("prop"); // remove prop
+$("selector").attr("name", function(attr){ ... });
+```
+
+---
+
+#### Styling elements
+
+```js
+$("selector").css("style","value"); // $("p").css("background-color","red");
+$("selector").css({"style":"value","style":"value"}); //JSON like - for multiple styles
+$("selector").css("style", function(index, value) { ... });
 ```
 
 ---
