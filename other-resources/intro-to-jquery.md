@@ -37,7 +37,7 @@
   - [Basic effects](#Basic-effects)
   - [Fading](#Fading)
   - [Sliding](#Sliding)
-  - [Customer effects](#Customer-effects)
+  - [Custom effects](#Custom-effects)
 - [**Ajax and Async**](#Ajax-and-Async)
 - [**Libraries**](#Libraries)
 
@@ -566,11 +566,51 @@ see previous code example
 
 ## **Effects**
 
+Animations
+
 ### Basic effects
 
 - `.hide()`
 - `.show()`
 - `.toggle()` - If it's showing, hide it. If it's hiding, show it.
+
+```html
+<style>
+    div { margin: 2px; font:bold 9pt 'Segoe UI';}
+.parent {
+  border:solid 2px black;
+  color:black;
+}
+.child {
+  border:solid 2px gray;
+  height:40px;
+  color:gray;
+}
+</style>
+<div class="parent" data-name="parent">
+  PARENT
+  <div class="child" data-name="child 1">CHILD 1</div>
+  <div class="child" data-name="child 2">CHILD 2</div>
+  <div class="child" data-name="child 3">CHILD 3</div>
+</div>
+<button id="showAll">Show All</button>
+```
+
+```js
+$('.parent div').on('click',function(ev) {
+  $(ev.currentTarget).hide();
+});
+
+$('#showAll').on('click', function(ev) {
+  $('.parent div').show();
+});
+```
+
+![eff1](../images/eff1.png)
+
+click in the child divs
+
+![eff2](../images/eff2.png)
 
 ---
 
@@ -579,9 +619,21 @@ see previous code example
 Fading adjusts the opacity of the selected element
 
 - `.fadeIn()`
-- `.fadeOut()`
+- `.fadeOut()` - fades down to 0 - then set display: none and pulls out of DOM
 - `.fadeTo()` - Set the opacity to a set value
 - `.fadeToggle()` - If it's showing, fade it out. If it's hidden, fade it in.
+
+(using the html from above)
+
+```js
+$('.parent div').on('click',function(ev) {
+  $(ev.currentTarget).fadeTo(500,0);
+});
+
+$('#showAll').on('click', function(ev) {
+  $('.parent div').fadeTo(0,1);
+});
+```
 
 ---
 
@@ -591,15 +643,71 @@ Fading adjusts the opacity of the selected element
 - `.slideDown()` - Shows an element using a sliding motion
 - `.slideToggle()` - If it's showing, then hide it. If it's hiding, then show it.
 
+```js
+$('.parent div').on('click',function(ev) {
+  $(ev.currentTarget).slideUp();
+});
+
+$('#showAll').on('click', function(ev) {
+  $('.parent div').slideDown();
+});
+```
+
 ---
 
-### Customer effects
+### Custom effects
 
 - `.animate()` - Perform a custom animation of a set of CSS properties
 - `.queue()`, `.dequeue()`, and `.clearQueue()` - Control the queue of functions to be executed on the matched elements
 - `.delay()` - Set a timer to delay execution of subsequent items in the queue
 - `.stop()` - Stop the animation
 - `.finish()` - Stop the animation and clear queue
+
+```html
+<style>
+    div { margin: 2px; font:bold 9pt 'Segoe UI';}
+.parent {
+  border:solid 2px black;
+  color:black;
+}
+.child {
+  border:solid 2px gray;
+  height:40px;
+  color:gray;
+}
+</style>
+<div class="parent" data-name="parent">
+  PARENT
+  <div class="child" data-name="child 1">CHILD 1</div>
+  <div class="child" data-name="child 2">CHILD 2</div>
+  <div class="child" data-name="child 3">CHILD 3</div>
+</div>
+<button id="stretchAll">Stretch All</button>
+```
+
+
+```js
+// $.easing.easeInOutQuad = function (x, t, b, c, d) {
+//     if ((t/=d/2) < 1) return c/2*t*t + b;
+//     return -c/2 * ((--t)*(t-2) - 1) + b;
+// }
+
+// $('.parent div').on('click',function(ev) {
+//   $(ev.currentTarget).animate({width:200},'slow', 'easeInOutQuad');
+// });
+
+$('.parent div').on('click',function(ev) {
+  $(ev.currentTarget).animate({width:200},{duration:500});
+});
+
+$('#stretchAll').on('click', function(ev) {
+  $('.parent div').css('width','auto');
+});
+```
+
+Click child 1 and 2
+
+![eff](../images/eff3.png)
 
 ---
 
