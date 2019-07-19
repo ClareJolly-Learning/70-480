@@ -2,9 +2,9 @@
 
 [Link to video](https://channel9.msdn.com/Series/Introduction-to-jQuery)
 
-- [Getting started](#Getting-started)
+- [**Getting started**](#Getting-started)
   - [Document Ready](#Document-Ready)
-- [Selectors](#Selectors)
+- [**Selectors**](#Selectors)
   - [Syntax](#Syntax)
   - [Multiple selectors](#Multiple-selectors)
   - [Basic selectors](#Basic-selectors)
@@ -13,7 +13,7 @@
   - [Positional selectors](#Positional-selectors)
   - [Filters - different kind of selector](#Filters---different-kind-of-selector)
   - [Chaining](#Chaining)
-- [Manipulating the DOM](#Manipulating-the-DOM)
+- [**Manipulating the DOM**](#Manipulating-the-DOM)
   - [Element manipulation](#Element-manipulation)
     - [Inside elements](#Inside-elements)
     - [Copying elements](#Copying-elements)
@@ -24,7 +24,7 @@
   - [Modifying attributes](#Modifying-attributes)
     - [Styling elements](#Styling-elements)
   - [Styling and dimensions](#Styling-and-dimensions)
-- [Events](#Events)
+- [**Events**](#Events)
   - [Attachment and the Event object](#Attachment-and-the-Event-object)
     - [Attaching to events](#Attaching-to-events)
     - [Event object](#Event-object)
@@ -33,17 +33,17 @@
   - [Form events](#Form-events)
   - [Keyboard events](#Keyboard-events)
   - [Mouse events](#Mouse-events)
-- [Effects](#Effects)
+- [**Effects**](#Effects)
   - [Basic effects](#Basic-effects)
   - [Fading](#Fading)
   - [Sliding](#Sliding)
   - [Customer effects](#Customer-effects)
-- [Ajax and Async](#Ajax-and-Async)
-- [Libraries](#Libraries)
+- [**Ajax and Async**](#Ajax-and-Async)
+- [**Libraries**](#Libraries)
 
 ---
 
-## Getting started
+## **Getting started**
 
 Import the jQuery library via CDN or script
 
@@ -71,7 +71,7 @@ $(document).ready(function(){
 
 ---
 
-## Selectors
+## **Selectors**
 
 jQuery selectors derived from CSS selectors
 
@@ -193,7 +193,7 @@ $("p").css("background-color","red").css("color","green");
 
 ---
 
-## Manipulating the DOM
+## **Manipulating the DOM**
 
 ### Element manipulation
 
@@ -359,7 +359,7 @@ $("selector").position();
 
 ---
 
-## Events
+## **Events**
 
 ### Attachment and the Event object
 
@@ -439,7 +439,7 @@ $("selector").position();
 
 ---
 
-## Effects
+## **Effects**
 
 ### Basic effects
 
@@ -478,13 +478,13 @@ Fading adjusts the opacity of the selected element
 
 ---
 
-## Ajax and Async
+## **Ajax and Async**
 
 
 
 ---
 
-## Libraries
+## **Libraries**
 
 
 
