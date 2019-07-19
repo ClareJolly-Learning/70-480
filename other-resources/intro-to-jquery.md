@@ -512,7 +512,7 @@ Resizing the browser
 
 ### Form events
 
-- `.change()` - When an element's value changes
+- `.change()` - When an element's value changes (triggered on blur)
 - `.focus()` - When an element receives focus
 - `.blur()` - When an element loses focus
 - `.focusin()` - When an element or any nested elements receives focus
@@ -545,6 +545,8 @@ $('#myinput')
 - `.keypress()` - When the browser registers keyboard input (may vary by browser!)Not triggered by Shift, Esc, delete, etc.
 - `.keyup()` - When a key returns to the up position
 
+see previous code example
+
 ---
 
 ### Mouse events
@@ -558,7 +560,7 @@ $('#myinput')
 - `.mousemove()`
 - `.mouseout()`
 - `.mouseover()`
-- `.mouseup`()
+- `.mouseup()`
 
 ---
 
