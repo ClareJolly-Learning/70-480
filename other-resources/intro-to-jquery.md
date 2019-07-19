@@ -305,6 +305,8 @@ $("selector").attr("name", function(attr){ ... });
 
 #### Styling elements
 
+Inline styling
+
 ```js
 $("selector").css("style","value"); // $("p").css("background-color","red");
 $("selector").css({"style":"value","style":"value"}); //JSON like - for multiple styles
@@ -315,6 +317,28 @@ $("selector").css("style", function(index, value) { ... });
 
 ### Styling and dimensions
 
+Adding classes to a selector.  Better as not inline styling
 
+**Classes**
+
+```js
+$("selector").hasClass("className"); // does selector have class already
+$("selector").addClass("className");
+$("selector").addClass("className className2");
+$("selector").addClass("className2").removeClass("className");
+$("selector").removeClass("className");
+$("selector").removeClass("className");
+$("selector").toggleClass("className className2");
+```
+
+**Dimensions**
+
+```js
+$("selector").width("100px");
+$("selector").width();
+$("selector").height("100px");
+$("selector").height();
+$("selector").position();
+```
 
 ---
