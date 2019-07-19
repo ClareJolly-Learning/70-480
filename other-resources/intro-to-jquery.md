@@ -1,6 +1,6 @@
 # Introduction to jQuery <!-- omit in toc -->
 
-[Link to video](https://channel9.msdn.com/Series/Introduction-to-jQuery)
+[Link to videos](https://channel9.msdn.com/Series/Introduction-to-jQuery)
 
 - [**Getting started**](#Getting-started)
   - [Document Ready](#Document-Ready)
