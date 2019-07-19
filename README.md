@@ -27,5 +27,9 @@ Accelerated Certification Prep Jump Start
 
 ## Other Resources
 
+### Recommended in the exam prep video
+
 - [Introduction to jQuery](./other-resources/intro-to-jquery.md#readme)
 - [Javascript for Experienced Developers](./other-resources/js-for-experienced-developers.mdreadme)
+
+---
