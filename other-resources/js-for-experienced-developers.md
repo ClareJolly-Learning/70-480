@@ -965,6 +965,9 @@ var worker = new Worker('./worker.js');
 worker.onmessage = function (e) {
     // Resolve when operation completes
     // Just send the string back
+
+    // alert anyone who's using the promise object
+    // that the operation has completed successfully
     deferred.resolve(e.data.message);
 };
 
@@ -1006,7 +1009,22 @@ function sleep(milliseconds) {
 
 ### jQuery promises
 
+- Certain operations can take an unknown amount of time
+  - Making server calls
+  - Working with graphics
 
+- Certain operations perform at unknown times
+  - Timed events
+  - Web sockets
+
+- Asynchronous programming allows us to manage those situations
+
+- jQuery Promise is an implementation of the promise pattern
+
+- Put simply, the promise pattern allows a developer to register event handlers for various events or states
+  - failed
+  - succeeded
+  - in progress
 
 ---
 
