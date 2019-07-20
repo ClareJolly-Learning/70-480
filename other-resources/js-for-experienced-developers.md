@@ -35,6 +35,9 @@
   - [Introducing Web workers](#Introducing-Web-workers)
     - [Structure](#Structure)
     - [Demo](#Demo)
+    - [Considerations](#Considerations)
+    - [Passing an object](#Passing-an-object)
+    - [Stop/Start example](#StopStart-example)
   - [jQuery promises](#jQuery-promises)
   - [jQuery deferred](#jQuery-deferred)
 - [**Web Sockets**](#Web-Sockets)
@@ -752,6 +755,159 @@ self.onmessage = function (e) {
 ```
 
 ![ww](../images/ww3.png)
+
+---
+
+#### Considerations
+
+- web workers can pass any JSON/JS object
+- workers don't have events for start or end
+  - can easily be implemented through basic messaging
+
+- Stopping a web worker
+  - from page
+    - `worker.terminates();`
+  - from worker
+    - `self.close();`
+
+---
+
+#### Passing an object
+
+```js
+// wait for the document to be loaded
+$(function () {
+    // create the worker
+    // Remember, the script executes immediately
+    var worker = new Worker('./WebWorker.js');
+    // Create event handler for onmessage
+    // Event raised when worker sends message to page
+    worker.onmessage = function (e) {
+        // retrieve data. in this example it's an object
+        var data = e.data;
+        // object has one property, processedName
+        var processedName = data.processedName;
+        // add new list item
+        $('#result-list').append('<li>' + processedName + '</li>');
+    };
+    // Create event handler for click on button
+    $('#send-message').click(function () {
+        // retrieve name from textbox
+        var name = $('#name').val();
+        // create an object to send using JSON
+        // JSON uses key/value pairs
+        var messageObject = { name: name };
+        // send message to worker
+        worker.postMessage(messageObject);
+    });
+});
+```
+
+WebWorker.js
+
+```js
+// Worker script
+
+self.onmessage = function (e) {
+    // retrieve data.
+    // In this simple example it's an object
+    var dataObject = e.data;
+
+    // The object has one property called name
+    // "Process" the name
+    var processedName = dataObject.name + ' - Processed!';
+
+    // Create object to return to page
+    // Uses JSON (Key/Value pairs)
+    var result = { processedName: processedName };
+
+    self.postMessage(result);
+};
+```
+
+---
+
+#### Stop/Start example
+
+```js
+// wait for the document to be loaded
+$(function () {
+    // create the worker
+    // Remember, the script executes immediately
+    var worker = new Worker('./WebWorker.js');
+    // Create event handler for onmessage
+    // Event raised when worker sends message to page
+    worker.onmessage = function (e) {
+        // retrieve data. in this example it's an object
+        var data = e.data;
+        // create variable for result
+        var result = null;
+        // Object has a state property
+        if (data.state === "STARTED") {
+            // Started state
+            result = "Worker started!";
+        } else if (data.state === "STOPPED") {
+            // Stopped state
+            result = "Worker stopped!";
+            // Stop worker
+            worker.terminate();
+        } else {
+            // object has processedName property
+            result = data.processedName;
+        }
+        // add new list item
+        $('#result-list').append('<li>' + result + '</li>');
+    };
+    // Create event handler for click on button
+    $('#send-message').click(function () {
+        // retrieve name from textbox
+        var name = $('#name').val();
+        // create an object to send using JSON
+        // JSON uses key/value pairs
+        var message = { name: name };
+        // send message to worker
+        worker.postMessage(message);
+    });
+    $('#stop-worker').click(function () {
+        // send the STOP message
+        worker.postMessage({ state: "STOP" });
+    })
+    // start the worker by sending the START message
+    worker.postMessage({ state: "START" });
+});
+```
+
+WebWorker.js
+
+```js
+// Worker script
+
+self.onmessage = function (e) {
+// retrieve data.
+// In this simple example it's an object
+var data = e.data;
+
+// create result object
+var result = null;
+
+// Object has a state property
+if (data.state === "START") {
+    // Begin process
+    // Simple example: Send started state
+    result = { state: "STARTED" };
+} else if(data.state === "STOP") {
+    // End process
+    // Simple example: Send stopped state
+    result = { state: "STOPPED" }
+} else {
+    // "Process" the name
+    var processedName = data.name + ' - Processed!';
+    result = { processedName: processedName };
+}
+
+self.postMessage(result);
+};
+```
 
 ---
 
