@@ -327,7 +327,7 @@ Methods used for exception handling
 
 The error (commenting the code example)
 
-![err](../images/err-2png)
+![err](../images/err-2.png)
 
 ---
 
