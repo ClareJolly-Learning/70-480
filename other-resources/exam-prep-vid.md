@@ -5,6 +5,8 @@
 
 Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-Programming-in-HTML5-with-JavaScript-and-CSS3?term=70-480&lang-en=true)
 
+---
+
 - [**Exam Tips**](#Exam-Tips)
 - [**Exam Topics**](#Exam-Topics)
   - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
@@ -36,6 +38,8 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
       - [Demo 2 - jQuery Interactive](#Demo-2---jQuery-Interactive)
       - [Demo 3 - jQuery HTTP Get](#Demo-3---jQuery-HTTP-Get)
   - [Even more questions](#Even-more-questions)
+
+---
 
 ## **Exam Tips**
 

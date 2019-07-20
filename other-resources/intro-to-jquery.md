@@ -2,6 +2,8 @@
 
 [Link to videos](https://channel9.msdn.com/Series/Introduction-to-jQuery)
 
+---
+
 - [**Getting started**](#Getting-started)
   - [Document Ready](#Document-Ready)
 - [**Selection**](#Selection)
