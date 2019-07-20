@@ -445,6 +445,12 @@ Cannot delete properties that were inherited
 
 ### Constructors
 
+Constructors are used to set an object's properties and methods
+
+They are invoked the moment an object is instantiated
+
+Written in the form of a function using the `function` keyword
+
 ```js
 function Fruit(/*name, color*/){ // this could have also been typed as an anonymous function,var Fruit = function()
     //just like constructors in other languages, you can pass
@@ -472,6 +478,8 @@ orange.type();
 // Also note that dot or bracket notation will work when creating 
 // properties in the constructor
 ```
+
+![con](../images/con1.png)
 
 ---
 
@@ -507,6 +515,8 @@ orange.seeds = true;
 
 console.log(orange);
 ```
+
+![proto](../images/proto1.png)
 
 ---
 
