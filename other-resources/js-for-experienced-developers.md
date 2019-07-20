@@ -42,7 +42,11 @@
   - [jQuery promises](#jQuery-promises)
     - [Common Promise events](#Common-Promise-events)
     - [Demo](#Demo-1)
-- [**Web Sockets**](#Web-Sockets)
+- [**Server communications**](#Server-communications)
+  - [XML HTTP Request](#XML-HTTP-Request)
+  - [Ajax](#Ajax)
+  - [Web sockets](#Web-sockets)
+  - [SignalR](#SignalR)
 - [**Common Libraries**](#Common-Libraries)
 
 ---
@@ -1073,7 +1077,27 @@ $(function () {
 
 [🔼](#readme)
 
-## **Web Sockets**
+## **Server communications**
+
+### XML HTTP Request
+
+
+
+---
+
+### Ajax
+
+
+
+---
+
+### Web sockets
+
+
+
+---
+
+### SignalR
 
 
 
