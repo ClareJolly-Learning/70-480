@@ -49,6 +49,8 @@
 
 ---
 
+[🔼](#readme)
+
 ## **Getting started**
 
 Import the jQuery library via CDN or script
@@ -76,6 +78,8 @@ $(document).ready(function(){
 ```
 
 ---
+
+[🔼](#readme)
 
 ## **Selection**
 
@@ -198,6 +202,8 @@ $("p").css("background-color","red").css("color","green");
 ```
 
 ---
+
+[🔼](#readme)
 
 ## **Manipulating the DOM**
 
@@ -364,6 +370,8 @@ $("selector").position();
 ```
 
 ---
+
+[🔼](#readme)
 
 ## **Events**
 
@@ -570,6 +578,8 @@ see previous code example
 
 ---
 
+[🔼](#readme)
+
 ## **Effects**
 
 Animations
@@ -716,6 +726,8 @@ Click child 1 and 2
 ![eff](../images/eff3.png)
 
 ---
+
+[🔼](#readme)
 
 ## **Ajax and Async**
 

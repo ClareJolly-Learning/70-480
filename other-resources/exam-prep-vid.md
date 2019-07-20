@@ -41,6 +41,8 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
 
 ---
 
+[🔼](#readme)
+
 ## **Exam Tips**
 
 **Exam outline**
@@ -49,6 +51,8 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
 - Implement programme flow (js) (25%)
 - Implement and manipulate document structures and objects (DOM and some jQuery) (25%)
 - Access and Secure data (25%)
+
+[🔼](#readme)
 
 ## **Exam Topics**
 

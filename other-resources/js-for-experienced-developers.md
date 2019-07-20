@@ -36,6 +36,8 @@
 
 ---
 
+[🔼](#readme)
+
 ## **Getting started with JavaScript**
 
 ### Variables
@@ -336,6 +338,8 @@ The error (commenting the code example)
 
 ---
 
+[🔼](#readme)
+
 ## **Object Oriented Programming**
 
 ### Creating Objects
@@ -635,6 +639,8 @@ for(var item in seafood){
 
 ---
 
+[🔼](#readme)
+
 ## **Web Workers**
 
 
@@ -642,11 +648,15 @@ for(var item in seafood){
 
 ---
 
+[🔼](#readme)
+
 ## **Web Sockets**
 
 
 
 ---
+
+[🔼](#readme)
 
 ## **Common Libraries**
 

@@ -2,6 +2,8 @@
 
 My personal notes on revising for the Microsoft 70-480 Programming in HTML with JavaScript and CSS3 exam
 
+[🔼](#readme)
+
 ## JumpStart
 
 Accelerated Certification Prep Jump Start
@@ -19,11 +21,15 @@ Accelerated Certification Prep Jump Start
 
 ---
 
+[🔼](#readme)
+
 ## Exam Prep
 
 - [Microsoft Exam Prep - Exam 70 480 Programming in HTML5 with JavaScript and CSS](./other-resources/exam-prep-vid.md#readme)
 
 ---
+
+[🔼](#readme)
 
 ## Other Resources
 
