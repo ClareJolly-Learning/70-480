@@ -31,6 +31,12 @@
   - [Encapsulation](#Encapsulation)
   - [Final thoughts](#Final-thoughts)
 - [**Web Workers**](#Web-Workers)
+  - [Threading in JavaScript](#Threading-in-JavaScript)
+  - [Introducing Web workers](#Introducing-Web-workers)
+    - [Structure](#Structure)
+    - [Demo](#Demo)
+  - [jQuery promises](#jQuery-promises)
+  - [jQuery deferred](#jQuery-deferred)
 - [**Web Sockets**](#Web-Sockets)
 - [**Common Libraries**](#Common-Libraries)
 
@@ -643,6 +649,119 @@ for(var item in seafood){
 
 ## **Web Workers**
 
+### Threading in JavaScript
+
+- JavaScript doesn't natively support threading - Performance and security concerns.  Browsers put a lot of constraints on what JS can and can't do
+- How do we handle long running operations? - HTML5 introduces web workers
+
+Simulates threading
+
+---
+
+### Introducing Web workers
+
+A process through which you can tell a browser you have a script that's likely to take some time and you'd like it to run asynchronously
+
+Very simple 'threading' implementation
+
+- No control over the thread itself
+- Implemented through a messaging system
+  - You send messages to the worker
+  - Worker sends messages to 'main thread'
+- Worker does not have the ability to update the UI - only the main 'thread'
+- Worker doesn't have access to update the window object, DOM for example
+
+![ww](../images/ww1.png)
+
+---
+
+#### Structure
+
+![ww](../images/ww2.png)
+
+- Create new Worker
+- `postMessage` to the worker
+- worker send message back with `postMessage`
+- `message` event handler
+  - function
+  - use the `data` value to get the message
+
+Can pass string or object
+
+---
+
+#### Demo
+
+```html
+<div>
+    <label for="message">Message:</label>
+    <input type="text" id="message" class="form-control" />
+    <button type="button" id="send-message" class="btn">Send message</button>
+</div>
+<div>
+    Messages:
+    <ul id="message-list"></ul>
+</div>
+```
+
+```js
+// LOAD JQUERY
+// wait for the document to be loaded
+$(function () {
+    // create the worker
+    // Remember, the script executes immediately
+    var worker = new Worker('./WebWorker.js');
+    // Create event handler for onmessage
+    // Event raised when worker sends message to page
+    worker.onmessage = function (e) {
+        // retrieve data. in this example it's a simple string
+        var message = e.data;
+        // add new list item
+        $('#message-list').append('<li>' + message + '</li>');
+    };
+    // Create event handler for click on button
+    $('#send-message').click(function () {
+        // retrieve message from textbox
+        var message = $('#message').val();
+        // send message to worker
+        worker.postMessage(message);
+    });
+});
+```
+
+WebWorker.js
+
+```js
+// Worker script
+// Code executes immediately upon script load
+
+// add event handler to onmessage
+// Event raised when page sends message to worker
+// self represents the worker
+self.onmessage = function (e) {
+    // retrieve data.
+    // In this simple example it's a string
+    var message = e.data;
+
+    // "Process" the message
+    message += " - Processed!";
+
+    // Send message back to page
+    self.postMessage(message);
+};
+```
+
+![ww](../images/ww3.png)
+
+---
+
+### jQuery promises
+
+
+
+---
+
+### jQuery deferred
 
 
 
