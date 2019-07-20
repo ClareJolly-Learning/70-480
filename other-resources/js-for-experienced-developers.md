@@ -29,6 +29,7 @@
   - [Prototypes](#Prototypes)
   - [Inheritance](#Inheritance)
   - [Encapsulation](#Encapsulation)
+  - [Final thoughts](#Final-thoughts)
 - [**Web Workers**](#Web-Workers)
 - [**Web Sockets**](#Web-Sockets)
 - [**Common Libraries**](#Common-Libraries)
@@ -540,6 +541,10 @@ Vegetable.prototype.print = function() {
 var carrot = new Vegetable('carrot');
 
 carrot.print();  // Vegetable is healthy for you
+
+Vegetable.prototype.color = "so many colors"
+
+console.log(carrot.color) // so many colors
 ```
 
 ```js
@@ -600,7 +605,33 @@ console.log(student1 instanceof Student); // true
 
 ### Encapsulation
 
+Though private and public methods are not used in JavaScript to hide functionality, some methods we have discussed were made to help us with that issue:
 
+- closures
+- constructors
+- and in some cases anonymous functions
+
+---
+
+### Final thoughts
+
+```js
+var seafood = { small:"shrimp", big: "shark"};
+
+console.log( "small" in seafood); // true
+
+console.log(seafood.hasOwnProperty( "toString" )); // false
+
+for(var item in seafood){
+    console.log(item); // prints the small and big seafood
+}
+```
+
+![final](../images/final1.png)
+
+- `In` operator - will tell you if a property exists in an object
+- `hasOwnProperty` - will tell you if a specific property is unique to an object
+- `for/in` loop - to access all the properties in an object
 
 ---
 
