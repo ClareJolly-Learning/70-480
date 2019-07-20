@@ -937,6 +937,7 @@ or call reject on failure - `deferred.reject()`
 ```
 
 ```js
+// LOAD JQUERY
 // wait for the document to be loaded
 $(function () {
     $('#send-message').click(function () {
@@ -980,15 +981,22 @@ worker.js
 // Sample worker script
 
 self.onmessage = function (e) {
+    // received a message
     var startTime = new Date().toTimeString();
+
+    // simulate long running operation
     sleep(2000);
+
+    // build the return message
     var output = e.data.message + ' processed at ' + startTime;
-self.postMessage({ message: output });
+
+    // send the message back to the caller
+    self.postMessage({ message: output });
 }
 
-function sleep(miliseconds) {
+function sleep(milliseconds) {
     var startingTime = new Date().getTime();
-    var stopTime = startingTime + miliseconds;
+    var stopTime = startingTime + milliseconds;
 
     while (stopTime >= new Date().getTime()) { }
 }
