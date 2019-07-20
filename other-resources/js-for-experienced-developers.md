@@ -40,6 +40,8 @@
     - [Stop/Start example](#StopStart-example)
   - [jQuery deferred](#jQuery-deferred)
   - [jQuery promises](#jQuery-promises)
+    - [Common Promise events](#Common-Promise-events)
+    - [Demo](#Demo-1)
 - [**Web Sockets**](#Web-Sockets)
 - [**Common Libraries**](#Common-Libraries)
 
@@ -1025,6 +1027,47 @@ function sleep(milliseconds) {
   - failed
   - succeeded
   - in progress
+
+---
+
+#### Common Promise events
+
+- `done` - operation has completed **successfully**
+- `fail` - operation has completed **unsuccessfully**
+- `progress` - operation has reported a **progress** update
+
+---
+
+#### Demo
+
+```html
+<div>
+    <label for="message">Message:</label>
+    <input type="text" id="message" class="form-control" />
+    <button type="button" id="send-message" class="btn">Send message</button>
+</div>
+<div>
+    Results:
+    <ul id="result-list"></ul>
+</div>
+<script src="client.js"></script>
+```
+
+```js
+// LOAD JQUERY
+// wait for the document to be loaded
+$(function () {
+    $('#send-message').click(function () {
+        var message = $('#message').val();
+        // get promise from method
+        processMessage(message).done(function (data) {
+            $('#result-list').append('<li>' + data + '</li>');
+        })
+    });
+});
+```
+
+![jdef](../images/jdef2.png)
 
 ---
 
