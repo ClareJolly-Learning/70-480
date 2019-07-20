@@ -839,21 +839,21 @@ $(function () {
     // Event raised when worker sends message to page
     worker.onmessage = function (e) {
         // retrieve data. in this example it's an object
-        var data = e.data;
+        var messageObject = e.data;
         // create variable for result
         var result = null;
         // Object has a state property
-        if (data.state === "STARTED") {
+        if (messageObject.state === "STARTED") {
             // Started state
             result = "Worker started!";
-        } else if (data.state === "STOPPED") {
+        } else if (messageObject.state === "STOPPED") {
             // Stopped state
             result = "Worker stopped!";
             // Stop worker
             worker.terminate();
         } else {
             // object has processedName property
-            result = data.processedName;
+            result = messageObject.processedName;
         }
         // add new list item
         $('#result-list').append('<li>' + result + '</li>');
@@ -885,23 +885,23 @@ WebWorker.js
 self.onmessage = function (e) {
 // retrieve data.
 // In this simple example it's an object
-var data = e.data;
+var messageObject = e.data;
 
 // create result object
 var result = null;
 
 // Object has a state property
-if (data.state === "START") {
+if (messageObject.state === "START") {
     // Begin process
     // Simple example: Send started state
     result = { state: "STARTED" };
-} else if(data.state === "STOP") {
+} else if(messageObject.state === "STOP") {
     // End process
     // Simple example: Send stopped state
     result = { state: "STOPPED" }
 } else {
     // "Process" the name
-    var processedName = data.name + ' - Processed!';
+    var processedName = messageObject.name + ' - Processed!';
     result = { processedName: processedName };
 }
 
