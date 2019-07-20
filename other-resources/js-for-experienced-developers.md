@@ -20,6 +20,8 @@
   - [Errors and exceptions](#Errors-and-exceptions)
 - [**Object Oriented Programming**](#Object-Oriented-Programming)
   - [Creating Objects](#Creating-Objects)
+    - [Object Literal method](#Object-Literal-method)
+    - [Object Constructor method](#Object-Constructor-method)
   - [Dot and bracket notation](#Dot-and-bracket-notation)
   - [Constructors](#Constructors)
   - [Prototypes](#Prototypes)
@@ -335,6 +337,10 @@ The error (commenting the code example)
 
 ### Creating Objects
 
+#### Object Literal method
+
+Initialize all the properties of the object within brackets
+
 ```js
 // first we will look at creating an object with object literals
 
@@ -348,13 +354,23 @@ var collegeAlgebra = {
     expectedGrade: 98,
 
     textbookName: function(){
-        console.log("College Algebra for Freshman will be rquired");
+        console.log("College Algebra for Freshman will be required");
     }
 }
 
 console.log(collegeAlgebra);
 collegeAlgebra.textbookName();
 ```
+
+![obj](../images/obj1.png)
+
+---
+
+#### Object Constructor method
+
+Instantiate the object by calling the Object constructor
+
+Properties added using dot notation
 
 ```js
 //next we will explore creating an object using the object constructor
@@ -364,12 +380,14 @@ collegeAlg.level = "freshman";
 collegeAlg.difficulty = "hard";
 collegeAlg.expectedGrade = 98;
 collegeAlg.textbookName = function(){
-    console.log("College Algebra for Freshman will be rquired");
+    console.log("College Algebra for Freshman will be required");
 }
 
 console.log(collegeAlg);
 collegeAlg.textbookName();
 ```
+
+![obj](../images/obj1.png)
 
 ---
 
