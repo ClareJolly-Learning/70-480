@@ -19,6 +19,12 @@
     - [Recursion with anonymous function](#Recursion-with-anonymous-function)
   - [Errors and exceptions](#Errors-and-exceptions)
 - [**Object Oriented Programming**](#Object-Oriented-Programming)
+  - [Creating Objects](#Creating-Objects)
+  - [Dot and bracket notation](#Dot-and-bracket-notation)
+  - [Constructors](#Constructors)
+  - [Prototypes](#Prototypes)
+  - [Inheritance](#Inheritance)
+  - [Encapsulation](#Encapsulation)
 - [**Web Workers**](#Web-Workers)
 - [**Web Sockets**](#Web-Sockets)
 - [**Common Libraries**](#Common-Libraries)
@@ -252,12 +258,6 @@ Since this function doesn't have a name to call the function again you use the `
 
 ---
 
-<!-- ### Dot and bracket notation
-
-
-
---- -->
-
 ### Errors and exceptions
 
 Errors found in JavaScript:
@@ -332,6 +332,187 @@ The error (commenting the code example)
 ---
 
 ## **Object Oriented Programming**
+
+### Creating Objects
+
+```js
+// first we will look at creating an object with object literals
+
+var myGrades = {}; // this is an empty object but because there are brackets
+                   // this is still considered an object
+
+// this is an object made using object literals and different data types
+var collegeAlgebra = {
+    level: "freshman",
+    difficulty: "hard",
+    expectedGrade: 98,
+
+    textbookName: function(){
+        console.log("College Algebra for Freshman will be rquired");
+    }
+}
+
+console.log(collegeAlgebra);
+collegeAlgebra.textbookName();
+```
+
+```js
+//next we will explore creating an object using the object constructor
+
+var collegeAlg = new Object();
+collegeAlg.level = "freshman";
+collegeAlg.difficulty = "hard";
+collegeAlg.expectedGrade = 98;
+collegeAlg.textbookName = function(){
+    console.log("College Algebra for Freshman will be rquired");
+}
+
+console.log(collegeAlg);
+collegeAlg.textbookName();
+```
+
+---
+
+### Dot and bracket notation
+
+
+
+---
+
+### Constructors
+
+```js
+function Fruit(/*name, color*/){ // this could have also been typed as an anonymous function,var Fruit = function()
+    //just like constructors in other languages, you can pass
+    //in values for instantiation
+    console.log("Object created by constructor");
+
+    //lets starts with a simple function
+    this.type = function(){
+        console.log("Hi I am fruit");
+    }
+
+    //Lets add some properties
+    //Do this second
+    /*this.name = name;
+    this.color = color;*/
+}
+
+var orange = new Fruit(/*"orange", "orange"*/);
+
+console.log(orange);
+orange.type();
+
+//Notice the differences between creating an object and a constructor
+// The constructor does not use the object literal notation!
+// Also note that dot or bracket notation will work when creating 
+// properties in the constructor
+```
+
+---
+
+### Prototypes
+
+```js
+function Fruit(name, color){ 
+    console.log("Object created by constructor");
+
+    this.type = function(){
+        console.log("Hi I am fruit");
+    } 
+    this.name = name;
+    this.color = color;
+
+}
+
+var orange = new Fruit("orange", "orange");
+
+console.log(orange);
+orange.type();
+
+// Prototyping starts off with have a constructor
+// like the one we just created
+
+/*Lets start with adding a new property*/
+
+Fruit.prototype.seeds = false;
+
+console.log(orange);
+orange.seeds = true;
+
+
+console.log(orange);
+```
+
+---
+
+### Inheritance
+
+```js
+var vegetable = function() {
+    this.name = "Vegetable";
+}
+
+ClassA.prototype.print = function() {
+    console.log(this.name + " is healthy for you");
+}
+
+var carrot = new ClassA();
+
+carrot.print();
+```
+
+```js
+// Define the Person constructor
+var Person = function(firstName) {
+  this.firstName = firstName;
+};
+
+Person.prototype.sayHello = function(){
+  console.log("Hello, I'm " + this.firstName);
+};
+
+// Define the Student constructor
+function Student(firstName, subject) {
+  // Call the parent constructor, making sure (using Function#call)
+  // that "this" is set correctly during the call
+  Person.call(this, firstName);
+
+  // Initialize our Student-specific properties
+  this.subject = subject;
+};
+
+// Create a Student.prototype object that inherits from Person.prototype.
+// Note: A common error here is to use "new Person()" to create the
+// Student.prototype. That's incorrect for several reasons, not least 
+// that we don't have anything to give Person for the "firstName" 
+// argument. The correct place to call Person is above, where we call 
+// it from Student.
+Student.prototype = Object.create(Person.prototype); // See note below
+
+// Set the "constructor" property to refer to Student
+Student.prototype.constructor = Student;
+
+// Replace the "sayHello" method
+Student.prototype.sayHello = function(){
+  console.log("Hello, I'm " + this.firstName + ". I'm studying "
+              + this.subject + ".");
+};
+
+// Example usage:
+var student1 = new Student("Janet", "Applied Physics");
+student1.sayHello();   // "Hello, I'm Janet. I'm studying Applied Physics."
+student1.walk();       // "I am walking!"
+
+
+// Check that instanceof works correctly
+console.log(student1 instanceof Person);  // true
+console.log(student1 instanceof Student); // true
+```
+
+---
+
+### Encapsulation
 
 
 
