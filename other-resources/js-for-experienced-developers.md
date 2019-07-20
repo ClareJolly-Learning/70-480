@@ -38,8 +38,8 @@
     - [Considerations](#Considerations)
     - [Passing an object](#Passing-an-object)
     - [Stop/Start example](#StopStart-example)
-  - [jQuery promises](#jQuery-promises)
   - [jQuery deferred](#jQuery-deferred)
+  - [jQuery promises](#jQuery-promises)
 - [**Web Sockets**](#Web-Sockets)
 - [**Common Libraries**](#Common-Libraries)
 
@@ -911,13 +911,92 @@ self.postMessage(result);
 
 ---
 
-### jQuery promises
+### jQuery deferred
 
+Set up middleman object.  Will do its thing and let you know when complete.
 
+**Long running operations** - You can create your own long running operations and allow other developers to register event handlers
+
+**Deferred** object is used to manage long running operations and raise events on completion, failure, etc
+
+![jdef](../images/jdef1.png)
+
+or call reject on failure - `deferred.reject()`
+
+```html
+<div>
+    <label for="message">Message:</label>
+    <input type="text" id="message" class="form-control" />
+    <button type="button" id="send-message" class="btn">Send message</button>
+</div>
+<div>
+    Results:
+    <ul id="result-list"></ul>
+</div>
+<script src="client.js"></script>
+```
+
+```js
+// wait for the document to be loaded
+$(function () {
+    $('#send-message').click(function () {
+        var message = $('#message').val();
+        // get promise from method
+        var promise = processMessage(message);
+        // When operation completes, update list
+        promise.done(function (data) {
+            $('#result-list').append('<li>' + data + '</li>');
+        })
+    });
+});
+```
+
+client.js
+
+```js
+function processMessage(message) {
+// Create the deferred object
+var deferred = $.Deferred();
+
+// Begin doing work
+var worker = new Worker('./worker.js');
+
+worker.onmessage = function (e) {
+    // Resolve when operation completes
+    // Just send the string back
+    deferred.resolve(e.data.message);
+};
+
+worker.postMessage({ message: message });
+
+// return promise to caller
+return deferred.promise();
+}
+```
+
+worker.js
+
+```js
+// Sample worker script
+
+self.onmessage = function (e) {
+    var startTime = new Date().toTimeString();
+    sleep(2000);
+    var output = e.data.message + ' processed at ' + startTime;
+self.postMessage({ message: output });
+}
+
+function sleep(miliseconds) {
+    var startingTime = new Date().getTime();
+    var stopTime = startingTime + miliseconds;
+
+    while (stopTime >= new Date().getTime()) { }
+}
+```
 
 ---
 
-### jQuery deferred
+### jQuery promises
 
 
 
