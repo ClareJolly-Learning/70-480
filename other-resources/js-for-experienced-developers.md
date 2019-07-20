@@ -22,7 +22,9 @@
   - [Creating Objects](#Creating-Objects)
     - [Object Literal method](#Object-Literal-method)
     - [Object Constructor method](#Object-Constructor-method)
-  - [Dot and bracket notation](#Dot-and-bracket-notation)
+  - [Accessing Object Properties](#Accessing-Object-Properties)
+    - [Dot and bracket notation](#Dot-and-bracket-notation)
+    - [Deleting properties](#Deleting-properties)
   - [Constructors](#Constructors)
   - [Prototypes](#Prototypes)
   - [Inheritance](#Inheritance)
@@ -391,9 +393,53 @@ collegeAlg.textbookName();
 
 ---
 
-### Dot and bracket notation
+### Accessing Object Properties
 
+#### Dot and bracket notation
 
+- Dot notation
+
+    Using a period between the Object name and property
+
+    ```js
+    collegeAlg.level = "freshman";
+    collegeAlg.difficulty = "hard";
+    collegeAlg.expectedGrade = 98;
+    ```
+
+- Bracket notation
+  
+    Using a bracket between the object name and property.
+
+    Also lets you access a property name through other variable names
+
+    ```js
+    collegeAlg["level"] = "freshman";
+    collegeAlg["difficulty"] = "hard";
+    collegeAlg["expectedGrade"] = 98;
+    ```
+
+---
+
+#### Deleting properties
+
+```js
+var collegeAlg = {
+    level: "freshman",
+    difficulty: "hard",
+    expectedGrade: 98
+}
+
+console.log(collegeAlg.level)
+
+delete collegeAlg.level; //level property is deleted 
+
+console.log(collegeAlg.level)
+```
+
+![del](../images/del1.png)
+
+Cannot delete properties that were inherited
 
 ---
 
