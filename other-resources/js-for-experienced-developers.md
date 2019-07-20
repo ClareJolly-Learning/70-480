@@ -485,6 +485,12 @@ orange.type();
 
 ### Prototypes
 
+Every object has a prototype and every prototype is an object
+
+All objects inherit properties and methods from their prototypes (hence why it's the basis of inheritance)
+
+Prototyping is also an easy way to add properties and methods to objects that have already been instantiated
+
 ```js
 function Fruit(name, color){ 
     console.log("Object created by constructor");
@@ -523,17 +529,17 @@ console.log(orange);
 ### Inheritance
 
 ```js
-var vegetable = function() {
-    this.name = "Vegetable";
+var Vegetable = function(name = "Vegetable") {
+    this.name = name;
 }
 
-ClassA.prototype.print = function() {
+Vegetable.prototype.print = function() {
     console.log(this.name + " is healthy for you");
 }
 
-var carrot = new ClassA();
+var carrot = new Vegetable('carrot');
 
-carrot.print();
+carrot.print();  // Vegetable is healthy for you
 ```
 
 ```js
@@ -573,6 +579,10 @@ Student.prototype.sayHello = function(){
               + this.subject + ".");
 };
 
+Student.prototype.walk = function(){
+  console.log("I am walking");
+};
+
 // Example usage:
 var student1 = new Student("Janet", "Applied Physics");
 student1.sayHello();   // "Hello, I'm Janet. I'm studying Applied Physics."
@@ -583,6 +593,8 @@ student1.walk();       // "I am walking!"
 console.log(student1 instanceof Person);  // true
 console.log(student1 instanceof Student); // true
 ```
+
+![inh](../images/inh1.png)
 
 ---
 
