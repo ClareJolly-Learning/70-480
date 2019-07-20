@@ -780,6 +780,8 @@ self.onmessage = function (e) {
 
 #### Passing an object
 
+HTML as previous
+
 ```js
 // wait for the document to be loaded
 $(function () {
@@ -834,6 +836,8 @@ self.onmessage = function (e) {
 ---
 
 #### Stop/Start example
+
+HTML as previous
 
 ```js
 // wait for the document to be loaded
@@ -1081,25 +1085,111 @@ $(function () {
 
 ### XML HTTP Request
 
+```html
+<div>
+    <button type="button" id="load-data" class="btn">Load data</button>
+</div>
+<div id="output"></div>
+```
 
+```js
+// LOAD JQUERY
+$('#load-data').click(function () {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var response = xhr.responseText;
+            $('#output').text(response);
+        }
+    }
+    xhr.open('GET', '/Demo.txt');
+    xhr.send();
+});
+```
+
+```txt
+// Demo.txt
+Hello, world!
+```
 
 ---
 
 ### Ajax
 
+HTML as previous
 
+```js
+// LOAD JQUERY
+$('#load-data').click(function () {
+    $.get('/Demo.txt').done(function (data) {
+        $('#output').text(data);
+    });
+});
+```
+
+Demo.txt as previous
 
 ---
 
 ### Web sockets
 
+```html
+<div>
+    <label for="message">Message:</label>
+    <input type="text" class="form-control" id="message" />
+    <button type="button" class="btn" id="send-message" disabled="disabled">Send message</button>
+</div>
 
+<ul id="output"></ul>
+```
+
+```js
+// LOAD JQUERY
+$(function () {
+    var socket = new WebSocket('ws://localhost:49439/socket.ashx');
+    socket.onmessage = function (e) {
+        $('#output').append('<li>' + e.data + '</li>');
+    }
+    socket.onopen = function () {
+        $('#send-message').removeAttr('disabled');
+    }
+    $('#send-message').click(function () {
+        socket.send($('#message').val());
+    })
+})
+```
 
 ---
 
 ### SignalR
 
+```html
+<div>
+    <label for="message">Message:</label>
+    <input type="text" class="form-control" id="message" />
+    <button type="button" class="btn" id="send-message" disabled="disabled">Send message</button>
+</div>
 
+<ul id="output"></ul>
+```
+
+```js
+// LOAD JQUERY
+// LOAD SIGNALR
+$(function () {
+    var messageHub = $.connection.messageHub;
+    messageHub.client.messageProcessed = function (message) {
+        $('#output').append('<li>' + message + '</li>');
+    }
+    $.connection.hub.start().done(function () {
+        $('#send-message').removeAttr('disabled');
+        $('#send-message').click(function () {
+            var message = $('#message').val();
+            messageHub.server.processMessage(message);
+        });
+    });
+});
+```
 
 ---
 
