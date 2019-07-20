@@ -16,7 +16,7 @@
     - [Enclosures](#Enclosures)
   - [Anonymous functions](#Anonymous-functions)
     - [Types of anonymous functions](#Types-of-anonymous-functions)
-  - [Dot and bracket notation](#Dot-and-bracket-notation)
+    - [Recursion with anonymous function](#Recursion-with-anonymous-function)
   - [Errors and exceptions](#Errors-and-exceptions)
 - [**Object Oriented Programming**](#Object-Oriented-Programming)
 - [**Web Workers**](#Web-Workers)
@@ -237,15 +237,97 @@ However, the anonymous function can not be accessed before the neTime variable i
 
 ---
 
-### Dot and bracket notation
+#### Recursion with anonymous function
 
+```js
+// this function will calculate the factorial of any given number
+var factorial = function (n){
+    return !(n > 1) ? 1 : arguments.callee(n-1) * n;
+}
 
+console.log(factorial(10));
+```
+
+Since this function doesn't have a name to call the function again you use the `arguments.callee` local variable
 
 ---
 
+<!-- ### Dot and bracket notation
+
+
+
+--- -->
+
 ### Errors and exceptions
 
+Errors found in JavaScript:
 
+- suntax
+- Runtime
+- Logical
+
+Methods used for exception handling
+
+- try...catch...finally statement
+- throw statement - customised errors
+- the onerror() method - event handler
+
+```js
+    // simple and easy error tutorial
+    //  /* comment out function when testing the onerror function to see error
+    function myFunc()
+    {
+        var a = 100;
+        var b = 10;
+
+        try{
+            if ( b == 0 ){
+                throw( "Divide by zero error." );
+            }
+
+            else
+            {
+                var c = a / b;
+                alert("c = " + c);
+            }
+        }
+
+        catch ( e ) {
+            console.log("Error: " + e );
+        }
+
+        finally {
+            console.log("Finally block will always execute!" );
+        }
+    } // */
+
+    /*
+    window.onerror = function (msg, url, line) { // using this information is optional 
+        console.log("Message : " + msg );
+        console.log("url : " + url );
+        console.log("Line number : " + line );
+    }
+    // */
+```
+
+```html
+<html>
+   <head>
+   </head>
+   <body>
+      <p>Click the following to see the result:</p>
+      <form>
+         <input type="button" value="Click Me" onclick="myFunc();" />
+      </form>
+   </body>
+</html>
+```
+
+![err](../images/err-1.png)
+
+The error (commenting the code example)
+
+![err](../images/err-2png)
 
 ---
 
