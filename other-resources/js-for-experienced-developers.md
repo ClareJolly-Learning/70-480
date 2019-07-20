@@ -48,6 +48,7 @@
   - [Web sockets](#Web-sockets)
   - [SignalR](#SignalR)
 - [**Common Libraries**](#Common-Libraries)
+  - [jQuery](#jQuery)
 
 ---
 
@@ -1197,6 +1198,35 @@ $(function () {
 
 ## **Common Libraries**
 
+### jQuery
 
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<button>Animation</button>
+
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+```
+
+```js
+// first thing to note is all jQuery functions are inside a document ready event
+// this is to prevent any jQuery code from running before the document is finished loading
+$(document).ready(function(){
+    // do div fade first, then put it in the button function and then animate div
+  
+    $("button").click(function(){//.click function can be used for more than just buttons. 
+    //it is known as an Event Method
+
+         $("div").fadeOut(); //this is a simple function used to fade out elements
+
+    });
+    /*.click(function(){
+        var div = $("div");
+        div.animate({height: '300px', opacity: '0.4'}, "slow");
+        div.animate({width: '300px', opacity: '0.8'}, "slow");
+        div.animate({height: '100px', opacity: '0.4'}, "slow");
+        div.animate({width: '100px', opacity: '0.8'}, "slow");
+    });*/
+});
+```
 
 ---
