@@ -5,18 +5,20 @@
 - [Assessment 1 Notes](#Assessment-1-Notes)
   - [❓](#%E2%9D%93)
   - [Results](#Results)
-    - [❌ Q10](#%E2%9D%8C-Q10)
-    - [❌ Q11](#%E2%9D%8C-Q11)
-    - [❌ Q13](#%E2%9D%8C-Q13)
-    - [❌ Q23](#%E2%9D%8C-Q23)
-    - [❌ Q24](#%E2%9D%8C-Q24)
-    - [❌ Q34](#%E2%9D%8C-Q34)
-    - [❌ Q38](#%E2%9D%8C-Q38)
+    - [❌ Q10 - flexbox](#%E2%9D%8C-Q10---flexbox)
+    - [❌ Q11 - XHR](#%E2%9D%8C-Q11---XHR)
+    - [❌ Q13 - css](#%E2%9D%8C-Q13---css)
+    - [❌ Q23 - readAsArrayBuffer](#%E2%9D%8C-Q23---readAsArrayBuffer)
+    - [❌ Q24 - regex](#%E2%9D%8C-Q24---regex)
+    - [❌ Q34 - jquery selector (ends with etc)](#%E2%9D%8C-Q34---jquery-selector-ends-with-etc)
+    - [❌ Q38 - security techniques](#%E2%9D%8C-Q38---security-techniques)
   - [Themes to work on](#Themes-to-work-on)
 
 ---
 
 ## ❓
+
+<details><summary>Not sure</summary>
 
 - 2
 - 7
@@ -31,6 +33,8 @@
 - 38
 - 39
 - 40 - typo? missing `()` at end of line 3???
+  
+</details>
 
 ---
 
@@ -42,19 +46,19 @@
 
 ---
 
-### ❌ Q10
+### ❌ Q10 - flexbox
 
 ![1.10](../../images/1-10.png)
 
 ---
 
-### ❌ Q11
+### ❌ Q11 - XHR
 
 ![1.11](../../images/1-11.png)
 
 ---
 
-### ❌ Q13
+### ❌ Q13 - css
 
 Answer is:
 - The first row of the table will have a red background
@@ -71,19 +75,19 @@ My answer is correct in that case.  I answered:
 
 ---
 
-### ❌ Q23
+### ❌ Q23 - readAsArrayBuffer
 
 ![1.23](../../images/1-23.png)
 
 ---
 
-### ❌ Q24
+### ❌ Q24 - regex
 
 ![1.24](../../images/1-24.png)
 
 ---
 
-### ❌ Q34
+### ❌ Q34 - jquery selector (ends with etc)
 
 ![1.34](../../images/1-34.png)
 
@@ -99,7 +103,7 @@ But the question said **ENDS** with - which would be
 
 ---
 
-### ❌ Q38
+### ❌ Q38 - security techniques
 
 ![1.38](../../images/1-38.png)
 
