@@ -57,7 +57,11 @@
   - [jQuery](#jQuery)
     - [Syntax](#Syntax)
     - [Demo](#Demo-5)
+    - [Method types](#Method-types)
   - [RequireJS](#RequireJS)
+    - [Modules](#Modules)
+    - [Key functions](#Key-functions)
+    - [Demo](#Demo-6)
   - [MicroJS](#MicroJS)
 
 ---
@@ -1392,10 +1396,110 @@ $(document).ready(function(){
 
 ---
 
+#### Method types
+
+- Event methods: the actions that can cause the web page to respond.  You must pass a function through them in order to see the event occur.  e.g.
+  - Clicking a button
+  - Moving over an element
+- Effect methods: actions that occur to change elements on the page.  e.g.
+  - Hide
+  - Show
+  - Slide
+  - Animate
+
+---
+
 ### RequireJS
+
+- A framework used to load JavaScript files and modules
+- uses the Asynchronous Module Definition to load files
+  - Each module starts loading through asynchronous requests in a given order
+- Can be used with jQuery, Node.js and Dojo
+
+---
+
+#### Modules
+
+- Modules in JavaScript are small units of reusable code
+- Modules are used to export a value, rather than define a type
+- Usually export objects, functions or constructors
+- Modules usually belong to a package, which is made of many different modules
+
+---
+
+#### Key functions
+
+![req](../images/require1.png)
+
+---
+
+#### Demo
+
+```html
+<script data-main="app" src="lib/require.js"></script>
+<h1>Hello World</h1>
+```
+
+main.js
+
+```js
+define(function (require) {
+    // load any app-specific modules
+    // with a relative require call, 
+    // like:
+    var messages = require('./messages');
+
+    // load library/vendor modules using
+    // full IDs, like:
+    var print = require('print');
+
+    print(messages.getHello());
+});
+```
+
+messages.js
+
+```js
+define(function () {
+    return {
+        getHello: function () {
+            return 'Hello, World!';
+        }
+    };
+});
+```
+
+print.js
+
+```js
+defint(function () {
+    return function print(msg) {
+        console.log(msg);
+    };
+});
+```
+
+app.js
+
+```js
+requirejs.config({
+    baseUrl: 'lib',
+    paths: {
+        app: '.../app'
+    }
+});
+
+requirejs(['app/main']);
+```
+
+![require](../images/require2.png)
 
 ---
 
 ### MicroJS
+
+Use to source libraries that do what you need
+
+![micro](../images/micro.png)
 
 ---
