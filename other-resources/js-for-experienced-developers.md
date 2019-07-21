@@ -55,6 +55,10 @@
     - [Demo](#Demo-4)
 - [**Common Libraries**](#Common-Libraries)
   - [jQuery](#jQuery)
+    - [Syntax](#Syntax)
+    - [Demo](#Demo-5)
+  - [RequireJS](#RequireJS)
+  - [MicroJS](#MicroJS)
 
 ---
 
@@ -1330,9 +1334,34 @@ $(function () {
 
 ### jQuery
 
+Mainly used for:
+
+- Animations
+- Event handling
+- DOM manipulation
+
+---
+
+#### Syntax
+
+```js
+$(this).hide();
+$("p").hide();
+$(".test").hide();
+```
+
+- `$` - defines/accesses jQuery
+- `(selector)` - used to find the element of choice
+- `.action()` - performed on the element
+
+---
+
+#### Demo
+
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<button>Animation</button>
+<button id="fade">Fade out</button>
+<span>click to animate</span>
 
 <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
 ```
@@ -1341,22 +1370,32 @@ $(function () {
 // first thing to note is all jQuery functions are inside a document ready event
 // this is to prevent any jQuery code from running before the document is finished loading
 $(document).ready(function(){
-    // do div fade first, then put it in the button function and then animate div
+    // do div fade first, then put it in the #fade function and then animate div
   
-    $("button").click(function(){//.click function can be used for more than just buttons. 
+    $("#fade").click(function(){//.click function can be used for more than just buttons. 
     //it is known as an Event Method
 
          $("div").fadeOut(); //this is a simple function used to fade out elements
 
     });
-    /*.click(function(){
+
+    // attach a click handler to the span element
+    $("span").click(function(){
         var div = $("div");
         div.animate({height: '300px', opacity: '0.4'}, "slow");
         div.animate({width: '300px', opacity: '0.8'}, "slow");
         div.animate({height: '100px', opacity: '0.4'}, "slow");
         div.animate({width: '100px', opacity: '0.8'}, "slow");
-    });*/
+    });
 });
 ```
+
+---
+
+### RequireJS
+
+---
+
+### MicroJS
 
 ---
