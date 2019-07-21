@@ -2,16 +2,17 @@
 
 [Link](https://docs.google.com/forms/d/e/1FAIpQLSfvthkRSKKGWKTq84Q-xWpkdVVmVS5J-vbhM7asXkit29Wdqg/viewform)
 
-- [❓](#%E2%9D%93)
-- [Results](#Results)
-  - [:x: Q10 - flexbox](#x-Q10---flexbox)
-  - [:x: Q11 - XHR](#x-Q11---XHR)
-  - [:x: Q13 - css](#x-Q13---css)
-  - [:x: Q23 - readAsArrayBuffer](#x-Q23---readAsArrayBuffer)
-  - [:x: Q24 - regex](#x-Q24---regex)
-  - [:x: Q34 - jquery selector (ends with etc)](#x-Q34---jquery-selector-ends-with-etc)
-  - [:x: Q38 - security techniques](#x-Q38---security-techniques)
-- [Themes to work on](#Themes-to-work-on)
+- [Assessment 1 Notes](#assessment-1-notes)
+  - [❓](#%e2%9d%93)
+  - [Results](#results)
+    - [:x: Q10 - flexbox](#x-q10---flexbox)
+    - [:x: Q11 - XHR](#x-q11---xhr)
+    - [:x: Q13 - css](#x-q13---css)
+    - [:x: Q23 - readAsArrayBuffer](#x-q23---readasarraybuffer)
+    - [:x: Q24 - regex](#x-q24---regex)
+    - [:x: Q34 - jquery selector (ends with etc)](#x-q34---jquery-selector-ends-with-etc)
+    - [:x: Q38 - security techniques](#x-q38---security-techniques)
+  - [Themes to work on](#themes-to-work-on)
 
 ---
 
@@ -60,6 +61,8 @@
 ---
 
 ### :x: Q13 - css
+
+![1.13](../../images/1-13.png)
 
 Answer is:
 - The first row of the table will have a red background
