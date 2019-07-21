@@ -44,12 +44,12 @@ Answer is:
 
 However, this doesn't match with what I get when testing.
 
+![1.13](../../images/1-13-testing.png)
+
 My answer is correct in that case.  I answered:
 
 - The first row of the table will have a red background
 - The second cell in the third row of the table will have a blue background
-
-![1.13](../../images/1-13-testing.png)
 
 ❌ Q23
 
