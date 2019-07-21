@@ -4,16 +4,16 @@
 
 - [❓](#%E2%9D%93)
 - [Results](#Results)
-  - [❌ Q5 - overridden method](#%E2%9D%8C-Q5---overridden-method)
-  - [❌ Q12 - overridden method](#%E2%9D%8C-Q12---overridden-method)
-  - [❌ Q13 - auto vs. min-content](#%E2%9D%8C-Q13---auto-vs-min-content)
-  - [❌ Q15 - pseudo and not selectors](#%E2%9D%8C-Q15---pseudo-and-not-selectors)
-  - [❌ Q16 - disable form fields](#%E2%9D%8C-Q16---disable-form-fields)
-  - [❌ Q17 - prototype](#%E2%9D%8C-Q17---prototype)
-  - [❌ Q22 - canvas](#%E2%9D%8C-Q22---canvas)
-  - [❌ Q25 - uploading files](#%E2%9D%8C-Q25---uploading-files)
-  - [❌ Q31 - isPrototypeOf](#%E2%9D%8C-Q31---isPrototypeOf)
-  - [❌ Q37 - onChange](#%E2%9D%8C-Q37---onChange)
+  - [:x: Q5 - overridden method](#x-Q5---overridden-method)
+  - [:x: Q12 - overridden method](#x-Q12---overridden-method)
+  - [:x: Q13 - auto vs. min-content](#x-Q13---auto-vs-min-content)
+  - [:x: Q15 - pseudo and not selectors](#x-Q15---pseudo-and-not-selectors)
+  - [:x: Q16 - disable form fields](#x-Q16---disable-form-fields)
+  - [:x: Q17 - prototype](#x-Q17---prototype)
+  - [:x: Q22 - canvas](#x-Q22---canvas)
+  - [:x: Q25 - uploading files](#x-Q25---uploading-files)
+  - [:x: Q31 - isPrototypeOf](#x-Q31---isPrototypeOf)
+  - [:x: Q37 - onChange](#x-Q37---onChange)
 - [Themes to work on](#Themes-to-work-on)
 
 ---
@@ -48,25 +48,25 @@
 
 ---
 
-### ❌ Q5 - overridden method
+### :x: Q5 - overridden method
 
 ![2.5](../../images/2-5.png)
 
 ---
 
-### ❌ Q12 - overridden method
+### :x: Q12 - overridden method
 
 ![2.12](../../images/2-12.png)
 
 ---
 
-### ❌ Q13 - auto vs. min-content
+### :x: Q13 - auto vs. min-content
 
 ![2.13](../../images/2-13.png)
 
 ---
 
-### ❌ Q15 - pseudo and not selectors
+### :x: Q15 - pseudo and not selectors
 
 ![2.15](../../images/2-15.png)
 
@@ -86,7 +86,7 @@ So this would work too and is the working equivalent of what I selected
 
 ---
 
-### ❌ Q16 - disable form fields
+### :x: Q16 - disable form fields
 
 ![2.16](../../images/2-16.png)
 
@@ -105,31 +105,31 @@ Putting this on down to not being able to read the screenshot properly as I can 
 
 ---
 
-### ❌ Q17 - prototype
+### :x: Q17 - prototype
 
 ![2.17](../../images/2-17.png)
 
 ---
 
-### ❌ Q22 - canvas
+### :x: Q22 - canvas
 
 ![2.22](../../images/2-22.png)
 
 ---
 
-### ❌ Q25 - uploading files
+### :x: Q25 - uploading files
 
 ![2.25](../../images/2-25.png)
 
 ---
 
-### ❌ Q31 - isPrototypeOf
+### :x: Q31 - isPrototypeOf
 
 ![2.31](../../images/2-31.png)
 
 ---
 
-### ❌ Q37 - onChange
+### :x: Q37 - onChange
 
 ![2.37](../../images/2-37.png)
 

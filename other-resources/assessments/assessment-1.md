@@ -4,13 +4,13 @@
 
 - [❓](#%E2%9D%93)
 - [Results](#Results)
-  - [❌ Q10 - flexbox](#%E2%9D%8C-Q10---flexbox)
-  - [❌ Q11 - XHR](#%E2%9D%8C-Q11---XHR)
-  - [❌ Q13 - css](#%E2%9D%8C-Q13---css)
-  - [❌ Q23 - readAsArrayBuffer](#%E2%9D%8C-Q23---readAsArrayBuffer)
-  - [❌ Q24 - regex](#%E2%9D%8C-Q24---regex)
-  - [❌ Q34 - jquery selector (ends with etc)](#%E2%9D%8C-Q34---jquery-selector-ends-with-etc)
-  - [❌ Q38 - security techniques](#%E2%9D%8C-Q38---security-techniques)
+  - [:x: Q10 - flexbox](#x-Q10---flexbox)
+  - [:x: Q11 - XHR](#x-Q11---XHR)
+  - [:x: Q13 - css](#x-Q13---css)
+  - [:x: Q23 - readAsArrayBuffer](#x-Q23---readAsArrayBuffer)
+  - [:x: Q24 - regex](#x-Q24---regex)
+  - [:x: Q34 - jquery selector (ends with etc)](#x-Q34---jquery-selector-ends-with-etc)
+  - [:x: Q38 - security techniques](#x-Q38---security-techniques)
 - [Themes to work on](#Themes-to-work-on)
 
 ---
@@ -47,19 +47,19 @@
 
 ---
 
-### ❌ Q10 - flexbox
+### :x: Q10 - flexbox
 
 ![1.10](../../images/1-10.png)
 
 ---
 
-### ❌ Q11 - XHR
+### :x: Q11 - XHR
 
 ![1.11](../../images/1-11.png)
 
 ---
 
-### ❌ Q13 - css
+### :x: Q13 - css
 
 Answer is:
 - The first row of the table will have a red background
@@ -76,19 +76,19 @@ My answer is correct in that case.  I answered:
 
 ---
 
-### ❌ Q23 - readAsArrayBuffer
+### :x: Q23 - readAsArrayBuffer
 
 ![1.23](../../images/1-23.png)
 
 ---
 
-### ❌ Q24 - regex
+### :x: Q24 - regex
 
 ![1.24](../../images/1-24.png)
 
 ---
 
-### ❌ Q34 - jquery selector (ends with etc)
+### :x: Q34 - jquery selector (ends with etc)
 
 ![1.34](../../images/1-34.png)
 
@@ -104,7 +104,7 @@ But the question said **ENDS** with - which would be
 
 ---
 
-### ❌ Q38 - security techniques
+### :x: Q38 - security techniques
 
 ![1.38](../../images/1-38.png)
 
