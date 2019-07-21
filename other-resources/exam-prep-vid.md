@@ -7,43 +7,42 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
 
 ---
 
-- [**Exam Tips**](#Exam-Tips)
-- [**Exam Topics**](#Exam-Topics)
-  - [Drawing, Style and Animations](#Drawing-Style-and-Animations)
-    - [SVG shapes](#SVG-shapes)
-      - [Path Commands](#Path-Commands)
-    - [Example](#Example)
-    - [Transformations](#Transformations)
-    - [Transitions](#Transitions)
-    - [Canvas](#Canvas)
-  - [CSS Selectors](#CSS-Selectors)
-    - [Questions](#Questions)
-  - [HTML5 Objects](#HTML5-Objects)
-    - [Audio/Video](#AudioVideo)
-  - [Application cache](#Application-cache)
-    - [Updating Application cache](#Updating-Application-cache)
-    - [Geolocation](#Geolocation)
-  - [More questions](#More-questions)
-  - [Remote Communication](#Remote-Communication)
-    - [XML HTTP Request](#XML-HTTP-Request)
-    - [AJAX](#AJAX)
-    - [Reading JSON](#Reading-JSON)
-    - [Alternative Get request](#Alternative-Get-request)
-    - [Web Sockets](#Web-Sockets)
-  - [JavaScript](#JavaScript)
-    - [Web worker](#Web-worker)
-    - [Creating objects](#Creating-objects)
-    - [JQuery](#JQuery)
-      - [Demo 1 - jQuery selectors](#Demo-1---jQuery-selectors)
-      - [Demo 2 - jQuery Interactive](#Demo-2---jQuery-Interactive)
-      - [Demo 3 - jQuery HTTP Get](#Demo-3---jQuery-HTTP-Get)
-  - [Even more questions](#Even-more-questions)
+- [****Exam Tips****](#Exam-Tips)
+- [**Drawing, Style and Animations**](#Drawing-Style-and-Animations)
+  - [SVG shapes](#SVG-shapes)
+    - [Path Commands](#Path-Commands)
+  - [Example](#Example)
+  - [Transformations](#Transformations)
+  - [Transitions](#Transitions)
+  - [Canvas](#Canvas)
+- [**CSS Selectors**](#CSS-Selectors)
+  - [Questions](#Questions)
+- [**HTML5 Objects**](#HTML5-Objects)
+  - [Audio/Video](#AudioVideo)
+- [**Application cache**](#Application-cache)
+  - [Updating Application cache](#Updating-Application-cache)
+  - [Geolocation](#Geolocation)
+- [**More questions**](#More-questions)
+- [**Remote Communication**](#Remote-Communication)
+  - [XML HTTP Request](#XML-HTTP-Request)
+  - [AJAX](#AJAX)
+  - [Reading JSON](#Reading-JSON)
+  - [Alternative Get request](#Alternative-Get-request)
+  - [Web Sockets](#Web-Sockets)
+- [**JavaScript**](#JavaScript)
+  - [Web worker](#Web-worker)
+  - [Creating objects](#Creating-objects)
+  - [JQuery](#JQuery)
+    - [Demo 1 - jQuery selectors](#Demo-1---jQuery-selectors)
+    - [Demo 2 - jQuery Interactive](#Demo-2---jQuery-Interactive)
+    - [Demo 3 - jQuery HTTP Get](#Demo-3---jQuery-HTTP-Get)
+- [**Even more questions**](#Even-more-questions)
 
 ---
 
 [🔼](#readme)
 
-## **Exam Tips**
+## ****Exam Tips****
 
 **Exam outline**
 
@@ -54,11 +53,11 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
 
 [🔼](#readme)
 
-## **Exam Topics**
+---
 
-### Drawing, Style and Animations
+## **Drawing, Style and Animations**
 
-#### SVG shapes
+### SVG shapes
 
 Using markup to define shapes. and location
 
@@ -71,7 +70,9 @@ Put geometric objects in html markup - absolute position
 - Polygon
 - Path
 
-##### Path Commands
+---
+
+#### Path Commands
 
 Manually define a shape or open path
 
@@ -86,7 +87,9 @@ Command   | Name
 
  Uppercase is absolute and lowercase is relative
 
-#### Example
+---
+
+### Example
 
 ```js
  <svg height="140" width="500">
@@ -159,7 +162,7 @@ Command   | Name
 
 ---
 
-#### Transformations
+### Transformations
 
 - Translate - move
 - Rotate
@@ -170,7 +173,7 @@ Apply an effect to an element
 
 ---
 
-#### Transitions
+### Transitions
 
 - `transition-property`
 - `transition-duration`
@@ -204,7 +207,7 @@ Apply an effect to an element
 
 ---
 
-#### Canvas
+### Canvas
 
 objects created in canvas is not part of the DOM (SVGs are)
 
@@ -238,7 +241,7 @@ context.fill();
 
 ---
 
-### CSS Selectors
+## **CSS Selectors**
 
 - `>` - Direct descendent
 - `+` - Adjacent (after)
@@ -322,7 +325,7 @@ div[lang=en]{
 
 ---
 
-#### Questions
+### Questions
 
 ![question](../images/q1.png)
 
@@ -338,9 +341,9 @@ Answer - b: `input:required { background-color: yellow;`
 
 ---
 
-### HTML5 Objects
+## **HTML5 Objects**
 
-#### Audio/Video
+### Audio/Video
 
 **Video**
 
@@ -375,7 +378,7 @@ Your browser does not support the audio element.
 
 ---
 
-### Application cache
+## **Application cache**
 
 Caching certain files and what files to fallback to.  
 
@@ -399,7 +402,7 @@ FALLBACK:
 
 ---
 
-#### Updating Application cache
+### Updating Application cache
 
 Problem with application cache - browser can become aggressive in caching files.
 
@@ -417,7 +420,7 @@ if (aplicationCache.status == 4) {
 
 ---
 
-#### Geolocation
+### Geolocation
 
 Being able to use the client/browser geolocation
 
@@ -436,7 +439,7 @@ Always up to the user to indicate whether they want to give you the info
 
 ---
 
-### More questions
+## **More questions**
 
 ![q](../images/q4.png)
 
@@ -454,9 +457,9 @@ Answer - a + d
 
 ---
 
-### Remote Communication
+## **Remote Communication**
 
-#### XML HTTP Request
+### XML HTTP Request
 
 Low level
 
@@ -516,7 +519,7 @@ $('load-data').click(function () {
 
 ---
 
-#### AJAX
+### AJAX
 
 ```js
 var productJSON = JSON.stringify({ newProduct: product });
@@ -535,7 +538,7 @@ in jQuery, the post, get, put and delete is essentially doing an AJAX call.  You
 
 ---
 
-#### Reading JSON
+### Reading JSON
 
 Once you get results back
 
@@ -551,7 +554,7 @@ function displayLocations(result) {
 
 ---
 
-#### Alternative Get request
+### Alternative Get request
 
 ```js
 $('#load-data').click(function () {
@@ -566,7 +569,7 @@ $('#load-data').click(function () {
 
 ---
 
-#### Web Sockets
+### Web Sockets
 
 Asynchronous way to send communication back and forth in a connected channel.  Communicate from web application to server and vice versa.  Doesn't need a http request.  Useful for chat
 
@@ -593,9 +596,9 @@ if (window.WebSocket){
 
 ---
 
-### JavaScript
+## **JavaScript**
 
-#### Web worker
+### Web worker
 
 Simulate threading
 
@@ -683,7 +686,7 @@ if message received "START" then proceeds and sends message saying started.  Oth
 
 ---
 
-#### Creating objects
+### Creating objects
 
 object oriented.  Sort of class
 
@@ -705,7 +708,7 @@ alert(student.get_name());
 
 ---
 
-#### JQuery
+### JQuery
 
 ![jquery](../images/jquery.png)
 
@@ -713,7 +716,7 @@ Selectors in JQuery correlate to CSS3 selectors
 
 ---
 
-##### Demo 1 - jQuery selectors
+#### Demo 1 - jQuery selectors
 
 Common HTML for Demo 1(appears after the jQuery in the code)
 
@@ -836,7 +839,7 @@ Any button with the class of `stylealpha` set the border radius
 
 ---
 
-##### Demo 2 - jQuery Interactive
+#### Demo 2 - jQuery Interactive
 
 <!-- Common HTML for Demo 2 (appears after the jQuery in the code) -->
 
@@ -881,7 +884,7 @@ Click the button
 
 ---
 
-##### Demo 3 - jQuery HTTP Get
+#### Demo 3 - jQuery HTTP Get
 
 ```js
 <script type="text/javascript">
@@ -980,7 +983,7 @@ app.post('/api/data', function(req, res) {
 
 ---
 
-### Even more questions
+## **Even more questions**
 
 ![questions](../images/q6.png)
 
