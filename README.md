@@ -35,3 +35,9 @@ Accelerated Certification Prep Jump Start
 - [Javascript for Experienced Developers](./other-resources/js-for-experienced-developers.md#readme)
 
 ---
+
+## Assessment notes
+
+- [Assessment 1](./other-resources/assessments/assessment-1.md#readme)
+- - [Assessment 2](./other-resources/assessments/assessment-2.md#readme)
+- - [Assessment 3](./other-resources/assessments/assessment-3.md#readme)
