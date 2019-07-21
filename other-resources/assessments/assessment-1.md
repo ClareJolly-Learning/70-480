@@ -2,6 +2,20 @@
 
 [Link](https://docs.google.com/forms/d/e/1FAIpQLSfvthkRSKKGWKTq84Q-xWpkdVVmVS5J-vbhM7asXkit29Wdqg/viewform)
 
+- [Assessment 1 Notes](#Assessment-1-Notes)
+  - [❓](#%E2%9D%93)
+  - [Results](#Results)
+    - [❌ Q10](#%E2%9D%8C-Q10)
+    - [❌ Q11](#%E2%9D%8C-Q11)
+    - [❌ Q13](#%E2%9D%8C-Q13)
+    - [❌ Q23](#%E2%9D%8C-Q23)
+    - [❌ Q24](#%E2%9D%8C-Q24)
+    - [❌ Q34](#%E2%9D%8C-Q34)
+    - [❌ Q38](#%E2%9D%8C-Q38)
+  - [Themes to work on](#Themes-to-work-on)
+
+---
+
 ## ❓
 
 - 2
@@ -28,15 +42,19 @@
 
 ---
 
-❌ Q10
+### ❌ Q10
 
 ![1.10](../../images/1-10.png)
 
-❌ Q11
+---
+
+### ❌ Q11
 
 ![1.11](../../images/1-11.png)
 
-❌ Q13
+---
+
+### ❌ Q13
 
 Answer is:
 - The first row of the table will have a red background
@@ -51,15 +69,21 @@ My answer is correct in that case.  I answered:
 - The first row of the table will have a red background
 - The second cell in the third row of the table will have a blue background
 
-❌ Q23
+---
+
+### ❌ Q23
 
 ![1.23](../../images/1-23.png)
 
-❌ Q24
+---
+
+### ❌ Q24
 
 ![1.24](../../images/1-24.png)
 
-❌ Q34
+---
+
+### ❌ Q34
 
 ![1.34](../../images/1-34.png)
 
@@ -73,7 +97,9 @@ But the question said **ENDS** with - which would be
 
 `$('input[name$="name"]').css("background-color", "red")` which is closer to what I answered as none are actually correct
 
-❌ Q38
+---
+
+### ❌ Q38
 
 ![1.38](../../images/1-38.png)
 
