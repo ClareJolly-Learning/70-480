@@ -1258,12 +1258,15 @@ client
 // LOAD JQUERY
 $(function () {
     var socket = new WebSocket('ws://localhost:8080/socket');
+
     socket.onmessage = function (e) {
         $('#output').append('<li>' + e.data + '</li>');
     }
+
     socket.onopen = function () {
         $('#send-message').removeAttr('disabled');
     }
+
     $('#send-message').click(function () {
         socket.send($('#message').val());
     })
