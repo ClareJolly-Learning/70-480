@@ -50,8 +50,6 @@
     - [Demo](#Demo-3)
   - [Web sockets](#Web-sockets)
     - [Client](#Client)
-    - [Server](#Server)
-- [-->](#)
     - [Demo](#Demo-4)
 - [**Common Libraries**](#Common-Libraries)
   - [jQuery](#jQuery)
@@ -1238,14 +1236,6 @@ socket.onopen = function () {
 socket.send('hello, world!');
 ```
 
-<!-- ---
-
-#### Server
-
-```js
-
-``` 
--->
 ---
 
 #### Demo
