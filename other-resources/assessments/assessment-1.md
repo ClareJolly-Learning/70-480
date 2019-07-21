@@ -1,18 +1,17 @@
-# Assessment 1 Notes
+# Assessment 1 Notes <!-- omit in toc -->
 
 [Link](https://docs.google.com/forms/d/e/1FAIpQLSfvthkRSKKGWKTq84Q-xWpkdVVmVS5J-vbhM7asXkit29Wdqg/viewform)
 
-- [Assessment 1 Notes](#Assessment-1-Notes)
-  - [❓](#%E2%9D%93)
-  - [Results](#Results)
-    - [❌ Q10 - flexbox](#%E2%9D%8C-Q10---flexbox)
-    - [❌ Q11 - XHR](#%E2%9D%8C-Q11---XHR)
-    - [❌ Q13 - css](#%E2%9D%8C-Q13---css)
-    - [❌ Q23 - readAsArrayBuffer](#%E2%9D%8C-Q23---readAsArrayBuffer)
-    - [❌ Q24 - regex](#%E2%9D%8C-Q24---regex)
-    - [❌ Q34 - jquery selector (ends with etc)](#%E2%9D%8C-Q34---jquery-selector-ends-with-etc)
-    - [❌ Q38 - security techniques](#%E2%9D%8C-Q38---security-techniques)
-  - [Themes to work on](#Themes-to-work-on)
+- [❓](#%E2%9D%93)
+- [Results](#Results)
+  - [❌ Q10 - flexbox](#%E2%9D%8C-Q10---flexbox)
+  - [❌ Q11 - XHR](#%E2%9D%8C-Q11---XHR)
+  - [❌ Q13 - css](#%E2%9D%8C-Q13---css)
+  - [❌ Q23 - readAsArrayBuffer](#%E2%9D%8C-Q23---readAsArrayBuffer)
+  - [❌ Q24 - regex](#%E2%9D%8C-Q24---regex)
+  - [❌ Q34 - jquery selector (ends with etc)](#%E2%9D%8C-Q34---jquery-selector-ends-with-etc)
+  - [❌ Q38 - security techniques](#%E2%9D%8C-Q38---security-techniques)
+- [Themes to work on](#Themes-to-work-on)
 
 ---
 
