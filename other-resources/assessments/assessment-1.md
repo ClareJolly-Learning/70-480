@@ -24,6 +24,10 @@
 
 ![assessment1](../../images/assessment1-score.png)
 
+82%
+
+---
+
 ❌ Q10
 
 ![1.10](../../images/1-10.png)
@@ -65,6 +69,20 @@ However, none of these actually work
 
 `$('input[name*="name"]').css("background-color", "red")` does though
 
+But the question said **ENDS** with - which would be
+
+`$('input[name$="name"]').css("background-color", "red")` which is closer to what I answered as none are actually correct
+
 ❌ Q38
 
 ![1.38](../../images/1-38.png)
+
+---
+
+## Themes to work on
+
+- flexbox
+- XHR
+- readAsArrayBuffer
+- regex
+- XSS attacks - techniques for security
