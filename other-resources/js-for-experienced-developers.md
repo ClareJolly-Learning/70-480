@@ -1288,6 +1288,8 @@ wss.on('connection', ws => {
 })
 ```
 
+![ws](../images/ws1.png)
+
 ---
 
 <!-- ### SignalR
