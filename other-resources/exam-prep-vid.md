@@ -51,9 +51,9 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
 - Implement and manipulate document structures and objects (DOM and some jQuery) (25%)
 - Access and Secure data (25%)
 
-[🔼](#readme)
-
 ---
+
+[🔼](#readme)
 
 ## **Drawing, Style and Animations**
 
@@ -241,6 +241,8 @@ context.fill();
 
 ---
 
+[🔼](#readme)
+
 ## **CSS Selectors**
 
 - `>` - Direct descendent
@@ -325,6 +327,8 @@ div[lang=en]{
 
 ---
 
+[🔼](#readme)
+
 ## **QUESTIONS 1**
 
 ![question](../images/q1.png)
@@ -340,6 +344,8 @@ Answer - a + b
 Answer - b: `input:required { background-color: yellow;`
 
 ---
+
+[🔼](#readme)
 
 ## **HTML5 Objects**
 
@@ -377,6 +383,8 @@ Your browser does not support the audio element.
 ```
 
 ---
+
+[🔼](#readme)
 
 ## **Application cache**
 
@@ -439,6 +447,8 @@ Always up to the user to indicate whether they want to give you the info
 
 ---
 
+[🔼](#readme)
+
 ## **QUESTIONS 2**
 
 ![q](../images/q4.png)
@@ -456,6 +466,8 @@ Think of browser as a browser session
 Answer - a + d
 
 ---
+
+[🔼](#readme)
 
 ## **Remote Communication**
 
@@ -595,6 +607,8 @@ if (window.WebSocket){
 `wss` - web sockets secure
 
 ---
+
+[🔼](#readme)
 
 ## **JavaScript**
 
@@ -982,6 +996,8 @@ app.post('/api/data', function(req, res) {
 </details>
 
 ---
+
+[🔼](#readme)
 
 ## **QUESTIONS 3**
 
