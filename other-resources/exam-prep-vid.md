@@ -16,13 +16,13 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
   - [Transitions](#Transitions)
   - [Canvas](#Canvas)
 - [**CSS Selectors**](#CSS-Selectors)
-  - [Questions](#Questions)
+- [**QUESTIONS 1**](#QUESTIONS-1)
 - [**HTML5 Objects**](#HTML5-Objects)
   - [Audio/Video](#AudioVideo)
 - [**Application cache**](#Application-cache)
   - [Updating Application cache](#Updating-Application-cache)
   - [Geolocation](#Geolocation)
-- [**More questions**](#More-questions)
+- [**QUESTIONS 2**](#QUESTIONS-2)
 - [**Remote Communication**](#Remote-Communication)
   - [XML HTTP Request](#XML-HTTP-Request)
   - [AJAX](#AJAX)
@@ -36,7 +36,7 @@ Additional notes from [vid](https://channel9.msdn.com/Blogs/mcpexamprep/70-480-P
     - [Demo 1 - jQuery selectors](#Demo-1---jQuery-selectors)
     - [Demo 2 - jQuery Interactive](#Demo-2---jQuery-Interactive)
     - [Demo 3 - jQuery HTTP Get](#Demo-3---jQuery-HTTP-Get)
-- [**Even more questions**](#Even-more-questions)
+- [**QUESTIONS 3**](#QUESTIONS-3)
 
 ---
 
@@ -325,7 +325,7 @@ div[lang=en]{
 
 ---
 
-### Questions
+## **QUESTIONS 1**
 
 ![question](../images/q1.png)
 
@@ -439,7 +439,7 @@ Always up to the user to indicate whether they want to give you the info
 
 ---
 
-## **More questions**
+## **QUESTIONS 2**
 
 ![q](../images/q4.png)
 
@@ -983,7 +983,7 @@ app.post('/api/data', function(req, res) {
 
 ---
 
-## **Even more questions**
+## **QUESTIONS 3**
 
 ![questions](../images/q6.png)
 
