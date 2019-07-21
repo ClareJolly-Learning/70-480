@@ -44,9 +44,15 @@
     - [Demo](#Demo-1)
 - [**Server communications**](#Server-communications)
   - [XML HTTP Request](#XML-HTTP-Request)
+    - [Sample call](#Sample-call)
+    - [Demo](#Demo-2)
   - [Ajax](#Ajax)
+    - [Demo](#Demo-3)
   - [Web sockets](#Web-sockets)
-  - [SignalR](#SignalR)
+    - [Client](#Client)
+    - [Server](#Server)
+- [-->](#)
+    - [Demo](#Demo-4)
 - [**Common Libraries**](#Common-Libraries)
   - [jQuery](#jQuery)
 
@@ -1084,7 +1090,42 @@ $(function () {
 
 ## **Server communications**
 
+- One of the main goals of modern web applications is to mimic locally installed applications
+- The catch? A lot of data and resources you need are on the server
+
 ### XML HTTP Request
+
+Allows for 'raw' calls to the server
+
+Very low level - can be more complex than you need
+
+#### Sample call
+
+```js
+var result = null
+
+// create new request - by default asynchronous
+var xhr = new XMLHttpRequest();
+
+// detect that something has changed with the request
+xhr.onreadystatechange = function() {
+    // see if the operation has completed and is successful (readyState 4 means completed)
+    if(xhr.readyState == 4 && xhr.status == 200) {
+        // retrieve result
+        result = xhr.resultText;
+    }
+}
+
+// open the connection
+xhr.open("GET", "url");
+
+// send the request
+xhr.send();
+```
+
+---
+
+#### Demo
 
 ```html
 <div>
@@ -1097,13 +1138,21 @@ $(function () {
 // LOAD JQUERY
 $('#load-data').click(function () {
     var xhr = new XMLHttpRequest();
+
+    // when we get the data
     xhr.onreadystatechange = function () {
+
+        // make sure we have the data
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = xhr.responseText;
             $('#output').text(response);
         }
     }
+
+    // open the connection
     xhr.open('GET', '/Demo.txt');
+
+    // send the request
     xhr.send();
 });
 ```
@@ -1113,16 +1162,34 @@ $('#load-data').click(function () {
 Hello, world!
 ```
 
+![xhr](../images/xhr1.png)
+
 ---
 
 ### Ajax
+
+**A**synchronous **J**avaScript **a**nd **X**ML
+
+Set of commonly used standards and technologies for making server calls
+
+jQuery and other libraries simplify making Ajax calls - still uses XMLHttpRequest behind the scenes
+
+Provides helper methods
+
+- `$.get` to retrieve text
+- `$.getJSON` to retrieve a JSON object
+
+---
+
+#### Demo
 
 HTML as previous
 
 ```js
 // LOAD JQUERY
 $('#load-data').click(function () {
-    $.get('/Demo.txt').done(function (data) {
+    $.get('./Demo.txt').done(function (data) {
+        // The data from the server is inside of the variable data
         $('#output').text(data);
     });
 });
@@ -1130,9 +1197,50 @@ $('#load-data').click(function () {
 
 Demo.txt as previous
 
+![xhr](../images/xhr1.png)
+
 ---
 
 ### Web sockets
+
+- Client can call server
+- Server can call client
+
+Uses messaging system - similar to web workers
+
+---
+
+#### Client
+
+```js
+// create the socket
+var socket = new WebSocket('url');
+
+// receive message from server
+socket.onmessage = function(e) {
+    $('#output`).append('<li>' + e.data + '</li>');
+}
+
+// make sure the connection is opened
+socket.onopen = function () {
+    $('#send-message').removeAttr('disabled');
+}
+
+// send a message to the server
+socket.send('hello, world!');
+```
+
+<!-- ---
+
+#### Server
+
+```js
+
+``` 
+-->
+---
+
+#### Demo
 
 ```html
 <div>
@@ -1144,10 +1252,12 @@ Demo.txt as previous
 <ul id="output"></ul>
 ```
 
+client
+
 ```js
 // LOAD JQUERY
 $(function () {
-    var socket = new WebSocket('ws://localhost:49439/socket.ashx');
+    var socket = new WebSocket('ws://localhost:8080/socket');
     socket.onmessage = function (e) {
         $('#output').append('<li>' + e.data + '</li>');
     }
@@ -1160,9 +1270,24 @@ $(function () {
 })
 ```
 
+example node socket
+
+```js
+const WebSocket = require('ws')
+
+const wss = new WebSocket.Server({ port: 8080 })
+
+wss.on('connection', ws => {
+  ws.on('message', message => {
+    console.log(`Received message => ${message}`)
+  })
+  ws.send('ho!')
+})
+```
+
 ---
 
-### SignalR
+<!-- ### SignalR
 
 ```html
 <div>
@@ -1190,9 +1315,9 @@ $(function () {
         });
     });
 });
-```
+``` 
 
----
+--- -->
 
 [🔼](#readme)
 
