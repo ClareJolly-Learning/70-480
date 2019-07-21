@@ -75,6 +75,15 @@ However, this doesn't actually work
 `#dataTable tbody tr.selected:not(tr:last-child) {background-color: purple}`
 ![testing](../../images/2-15-testing.png)
 
+This works
+`#dataTable tbody tr.selected:not(:last-child) {background-color: orange}`
+
+However the question doesn't mention that we should only look at tbody - just says 'in the table'
+
+So this would work too and is the working equivalent of what I selected
+
+`#dataTable tr.selected:not(:last-child) {background-color: orange}`
+
 ---
 
 ### ❌ Q16 - disable form fields
