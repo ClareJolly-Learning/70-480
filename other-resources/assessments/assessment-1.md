@@ -43,6 +43,8 @@
 
 82%
 
+[Score](https://docs.google.com/forms/d/e/1FAIpQLSfvthkRSKKGWKTq84Q-xWpkdVVmVS5J-vbhM7asXkit29Wdqg/viewscore?viewscore=AE0zAgCj2lZSTNdDPN5Gipta0GhJvOhvofFNwm2Td9c0g4DcqvQa3mAZemjyIcAwlwK5yRw)
+
 ---
 
 ### ❌ Q10 - flexbox
