@@ -5,11 +5,11 @@
 - [❓](#%e2%9d%93)
 - [Results](#results)
   - [:x: Q6 - relative/absolute position](#x-q6---relativeabsolute-position)
-  - [:x: Q13 -](#x-q13)
-  - [:x: Q27 -](#x-q27)
-  - [:x: Q28 - missed that needed 2](#x-q28---missed-that-needed-2)
-  - [:x: Q29 -](#x-q29)
-  - [:x: Q30 -](#x-q30)
+  - [:x: Q13 - setting child css specific](#x-q13---setting-child-css-specific)
+  - [:x: Q27 - self executing function](#x-q27---self-executing-function)
+  - [:x: Q28 - web-workers - missed that needed 2](#x-q28---web-workers---missed-that-needed-2)
+  - [:x: Q29 - make button click](#x-q29---make-button-click)
+  - [:x: Q30 - border-box](#x-q30---border-box)
 - [Themes to work on](#themes-to-work-on)
 
 ---
@@ -48,7 +48,7 @@
 
 ---
 
-### :x: Q13 - 
+### :x: Q13 - setting child css specific
 
 ![3.13](../../images/3-13.png)
 
@@ -73,13 +73,13 @@ My answer is actually correct
 
 ---
 
-### :x: Q14 - 
+### :x: Q14 - media query in main css file
 
 ![3.14](../../images/3-14.png)
 
 ---
 
-### :x: Q25 - 
+### :x: Q25 - svg radius increase - actually none work
 
 ![3.25](../../images/3-25.png)
 
@@ -109,25 +109,25 @@ myCircle.setAttribute("r", 20 * 1.5);
 
 ---
 
-### :x: Q27 - 
+### :x: Q27 - self executing function
 
 ![3.27](../../images/3-27.png)
 
 ---
 
-### :x: Q28 - missed that needed 2
+### :x: Q28 - web-workers - missed that needed 2
 
 ![3.28](../../images/3-28.png)
 
 ---
 
-### :x: Q29 - 
+### :x: Q29 - make button click
 
 ![3.29](../../images/3-29.png)
 
 ---
 
-### :x: Q30 - 
+### :x: Q30 - border-box
 
 ![3.30](../../images/3-30.png)
 
