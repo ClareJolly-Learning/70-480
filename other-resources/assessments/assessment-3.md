@@ -6,8 +6,6 @@
 - [Results](#results)
   - [:x: Q6 - relative/absolute position](#x-q6---relativeabsolute-position)
   - [:x: Q13 -](#x-q13)
-  - [:x: Q14 -](#x-q14)
-  - [:x: Q25 -](#x-q25)
   - [:x: Q27 -](#x-q27)
   - [:x: Q28 - missed that needed 2](#x-q28---missed-that-needed-2)
   - [:x: Q29 -](#x-q29)
@@ -84,6 +82,30 @@ My answer is actually correct
 ### :x: Q25 - 
 
 ![3.25](../../images/3-25.png)
+
+I was wrong but actually none of these work
+
+something like this might work
+
+```js
+function zoomIn() {
+    
+var myCircle = document.getElementById("myCircle");
+    
+myCircle.r.baseVal.value = myCircle.r.baseVal.value * 1.5;
+}
+```
+
+or 
+
+```js
+function zoomIn() {
+    
+var myCircle = document.getElementById("myCircle");
+    
+myCircle.setAttribute("r", 20 * 1.5);
+}
+```
 
 ---
 
