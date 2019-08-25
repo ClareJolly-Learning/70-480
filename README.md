@@ -2,11 +2,11 @@
 
 My personal notes on revising for the Microsoft 70-480 Programming in HTML with JavaScript and CSS3 exam
 
-- [JumpStart](#JumpStart)
-- [Exam Prep](#Exam-Prep)
-- [Other Resources](#Other-Resources)
-  - [Recommended in the exam prep video](#Recommended-in-the-exam-prep-video)
-- [Assessment notes](#Assessment-notes)
+- [JumpStart](#jumpstart)
+- [Exam Prep](#exam-prep)
+- [Other Resources](#other-resources)
+  - [Recommended in the exam prep video](#recommended-in-the-exam-prep-video)
+- [Assessment notes](#assessment-notes)
 
 ---
 
@@ -47,3 +47,4 @@ Accelerated Certification Prep Jump Start
 - [Assessment 1](./other-resources/assessments/assessment-1.md#readme)
 - [Assessment 2](./other-resources/assessments/assessment-2.md#readme)
 - [Assessment 3](./other-resources/assessments/assessment-3.md#readme)
+- [Assessment Revision](./other-resources/assessments/assessment-prep-revision.md#readme)
